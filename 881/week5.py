@@ -139,13 +139,15 @@
 # print(f'You have entered {even} even numbers')
 # print(f'You have entered {odd} odd numbers')
 
-count = 1
-while(count <= 10):
-    ans = input('Would you like green eggs and ham? (Y/N): ')
-    if(ans == 'Y'):
-        break
-    count += 1
-if(count <= 10):
-    print("That's a smart choice!")
-else:
-    print("Oh well, you don't know what you're missing!")
+# count = 1
+# while(count <= 10):
+#     ans = input('Would you like green eggs and ham? (Y/N): ')
+#     if(ans == 'Y'):
+#         break
+#     count += 1
+# if(count <= 10):
+#     print("That's a smart choice!")
+# else:
+#     print("Oh well, you don't know what you're missing!")
+
+print('this is a test of while loop')
