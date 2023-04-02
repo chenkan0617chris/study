@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+            height: 200px;
+        }
+        div {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+    <script>
+        function mouseover() {
+            var img1 = document.querySelector('#img1')
+            var img2 = document.querySelector('#img2')
+            img1.src = './frog.jpeg';
+            img2.src = './lion.jpg';
+        }
+
+        function mouseleave() {
+            var img1 = document.querySelector('#img1')
+            var img2 = document.querySelector('#img2')
+            img1.src = './lion.jpg';
+            img2.src = './frog.jpeg';
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <img id="img1" onmouseover="mouseover()" onmouseleave="mouseleave()" src="./lion.jpg" />
+        <img id="img2" onmouseover="mouseover()" onmouseleave="mouseleave()" src="./frog.jpeg" />
+    </div>
+</body>
+</html>

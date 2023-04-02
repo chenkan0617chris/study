@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showLion() {
+            var img = document.getElementById('img');
+            img.src = './lion.jpg';
+        }
+
+        function showFrog() {
+            var img = document.getElementById('img');
+            img.src = './frog.jpeg';
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <button onclick="showLion()">Lion</button>
+        <button onclick="showFrog()">Frog</button>
+    </div>
+    <div>
+        <img style="width: 300px" id="img" />
+    </div>
+</body>
+</html>

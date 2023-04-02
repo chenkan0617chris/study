@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Whosville library book search</h2>
+    <form action="http://library.whosville/bsearch">
+        <table>
+            <tr>
+                <td>
+                    <label>Author name:</label>
+                </td>
+                <td>
+                    <input name="author" /><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Publication year:</label>
+                </td>
+                <td>
+                    <input name="year" /><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Subject:</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="sub" value="mth" /> Mathematics<br />
+                    <input type="checkbox" name="sub" value="cs" /> Computer Science<br />
+                    <input type="checkbox" name="sub" value="bio" /> Biology<br />
+                    <input type="checkbox" name="sub" value="phy" /> Physics<br />
+                    <input type="checkbox" name="sub" value="chem" /> Chemistry<br />
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Research" />
+                    <input type="reset" value="Clear" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

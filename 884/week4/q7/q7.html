@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+            height: 250px;
+            display: none;
+        }
+    </style>
+    <script>
+        function onload() {
+            var input = document.querySelector('input');
+            var img = document.querySelector('img');
+            input.addEventListener('keyup', function(event) {
+                if(event.code == 'Enter') {
+                    if(input.value == 'display lion'){
+                        img.src = './lion.jpg';
+                        img.style.display = 'block'
+                    } else if (input.value == 'display frog'){
+                        img.src = './frog.jpeg';
+                        img.style.display = 'block'
+                    } else {
+                        alert('Invalid command');
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body onload="onload()">
+    <div>
+        <label>Enter command: </label>
+        <input />
+    </div>
+    <div>
+        <img />
+    </div>
+</body>
+</html>

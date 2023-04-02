@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #root {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 30vw;
+        }
+    </style>
+    <script>
+        function clickFrog() {
+            var num = document.querySelector('#number');
+            num.innerHTML = Number(num.innerHTML) - 10;
+        }
+
+        function clickDog() {
+            var num = document.querySelector('#number');
+            num.innerHTML = Number(num.innerHTML) + 5;
+        }
+
+        function reset() {
+            var num = document.querySelector('#number');
+            num.innerHTML = '7833908';
+        }
+    </script>
+</head>
+<body>
+    <div id="root">
+        <span onclick="clickFrog()" style="font-size: 40px;">&#x1F438;</span>
+        <img onclick="clickDog()" style="width: 150px" src="./dog.jpg" />
+        <button onclick="reset()">reset</button>
+        <span id="number">7833908</span>
+    </div>
+</body>
+</html>

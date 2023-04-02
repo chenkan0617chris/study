@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+    <script>
+        function clickImg2() {
+            var img1 = document.querySelector('.img1');
+            var img2 = document.querySelector('.img2');
+            var temp = img1.src;
+            img1.src = img2.src;
+            img2.src = temp;
+        }
+
+        function clickImg3() {
+            var img1 = document.querySelector('.img1');
+            var img2 = document.querySelector('.img2');
+            var img3 = document.querySelector('.img3');
+            var temp = img1.src;
+            img1.src = img3.src;
+            img3.src = img2.src;
+            img2.src = temp;
+        }
+    </script>
+</head>
+<body>
+    <div class="root">
+        <img class="img1" src="./name.png" alt="">
+        <img class="img2" onclick="clickImg2()" src="./number.png" alt="">
+        <img class="img3" onclick="clickImg3()" src="./course.png" alt="">
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var output = '', count = 0;
+
+        function add() {
+            var flower = '&#128174', smile = '&#128515;';
+
+            output += count % 2 == 0 ? flower : smile;
+
+            var text = document.querySelector('#text');
+
+            text.innerHTML = output;
+
+            count++;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <button onclick="add()">Add emoji</button>
+        <p id="text"></p>
+    </div>
+</body>
+</html>

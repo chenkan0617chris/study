@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function changeName() {
+            var button = document.getElementById('button');
+
+            button.innerHTML = 'how are you?'
+        }
+        function input(){
+            var input = document.getElementById('input');
+            input.value = 'how are you'
+        }
+
+        function changeValue() {
+            confirm ('asd')
+        }
+        
+
+    </script>
+</head>
+<body>
+    <button id="button" onclick="input()">Hello world </button>
+
+    <input id="input" />
+    <p style="background: red; height: 20px; color: white">1231</p>
+    <p style="background: red; height: 20px; color: white">1231</p>
+
+    <span style="background: blue; height: 20px; color: white">spanspamasdasdasdasdsad</span>
+    <span style="background: blue; height: 20px; color: white">spanspamasdasdasdasdsad</span>
+    <span style="background: blue; height: 20px; color: white">spanspamasdasdasdasdsad</span>
+
+    <select onchange="changeValue()">
+        <option value="a">a</option>
+        <option value="b">b</option>
+        <option value="c">c</option>
+    </select>
+
+</body>
+</html>

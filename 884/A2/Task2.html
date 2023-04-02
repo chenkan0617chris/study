@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div span {
+            text-decoration: underline;
+        }
+        div span:nth-child(2) {
+            color: red;
+        }
+
+        div span:nth-child(3) {
+            color: green;
+        }
+
+        div span:nth-child(4) {
+            color: orange;
+        }
+    </style>
+    <script>
+        function showFullName() {
+            var text = document.querySelector('#text');
+            text.value = 'Kan Chen';
+        }
+
+        function showStudentNumber() {
+            var text = document.querySelector('#text');
+            text.value = '7833908';
+        }
+
+        function clearAll() {
+            var text = document.querySelector('#text');
+            text.value = '';
+        }
+
+    </script>
+</head>
+<body>
+    <div>
+        <input id="text" />
+        <span onmouseover="showFullName()">Show full name</span>
+        <span onmouseover="showStudentNumber()">Show student number</span>
+        <span onmouseover="clearAll()">Clear</span>
+    </div>
+</body>
+</html>

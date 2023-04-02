@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            justify-content: center;
+        }
+
+        span{
+            font-size: 40px;
+        }
+    </style>
+    <script>
+        function roar() {
+            var text = document.getElementById('text');
+            text.innerHTML = 'Roar';
+            text.style.color = 'orange';
+        }
+
+        function ribbit() {
+            var text = document.getElementById('text');
+            text.innerHTML = 'Ribbit';
+            text.style.color = 'green';
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <img src="./lion.jpg" style="width: 300px" onclick="roar()" />
+        <img src="./frog.jpeg" style="width: 300px" onclick="ribbit()" />
+    </div>
+    <div>
+        <span id="text"></span>
+    </div>
+</body>
+</html>
