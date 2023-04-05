@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function check() {
+            var first_number = document.getElementById('first_number').innerHTML;
+            var last_number = document.getElementById('last_number').innerHTML;
+            var answer = document.getElementById('answer').innerHTML;
+            var operation = document.getElementById('operation').innerHTML;
+            var text;
+            if(operation == 'addition') {
+                if(Number(answer) == Number(first_number) + Number(last_number)) {
+                
+                    text ='Incorrect, please try again.';
+                } else {
+                    correct = false;
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <input id="first_number" type="text" />
+        <select>
+            <option value="addition">+</option>
+            <option value="subtraction">-</option>
+            <option value="multiplication">*</option>
+            <option value="division">/</option>
+        </select>
+        <input id="last_number" type="text" />
+        =
+        <input id="answer" type="text" />
+        <button onclick="check()">Check</button>
+        <span></span>
+    </div>
+</body>
+</html>
