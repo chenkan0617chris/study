@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var animation;
+        var sliding = false;
+        var prev, index;
+
+        function slide() {
+            var imgArray = [
+                './img/img1.jpg',
+                './img/img2.jpg',
+                './img/img3.jpg',
+                './img/img4.jpg',
+                './img/img5.jpg',
+            ];
+
+            while(prev === index) {
+                index = Math.floor(Math.random() * imgArray.length);
+            }
+            var slideImg = document.getElementById('slideImg');
+            slideImg.src = imgArray[index];
+            prev = index;
+        }
+
+        function startSlide() {
+            if(sliding){
+                return;
+            } else {
+                animation = setInterval(slide, 1000);
+                sliding = true;
+            }
+        }
+
+        function stopSlide() {
+            clearInterval(animation);
+            sliding = false;
+        }
+
+    </script>
+</head>
+<body>
+    <div>
+        <button onclick="startSlide()">Start Slideshow</button>
+        <button onclick="stopSlide()">Stop Slideshow</button><br/><br/><br/>
+        <img width="300px" id="slideImg" /> 
+    </div>
+</body>
+</html>

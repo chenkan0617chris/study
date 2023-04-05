@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var clock;
+        var counting = false;
+        function count() {
+            var display = document.getElementById('display');
+            display.innerHTML = Number(display.innerHTML) + 1;
+        }
+
+        function startCounter() {
+            if(counting){
+                return;
+            } else {
+                clock = setInterval(count, 1000);
+                counting = true;
+            }
+        }
+
+        function stopCounter() {
+            clearInterval(clock);
+            counting = false;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <button onclick="startCounter()">Start counter animation</button>
+        <button onclick="stopCounter()">Stop counter animation</button><br /><br />
+        <span id="display">0</span>
+    </div>
+</body>
+</html>

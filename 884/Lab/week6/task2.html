@@ -7,37 +7,39 @@
     <title>Document</title>
     <script>
         function check() {
-            var first_number = document.getElementById('first_number').innerHTML;
-            var last_number = document.getElementById('last_number').innerHTML;
-            var answer = document.getElementById('answer').innerHTML;
-            var operation = document.getElementById('operation').innerHTML;
+            var first_number = document.getElementById('first_number').value;
+            var last_number = document.getElementById('last_number').value;
+            var answer = document.getElementById('answer').value;
+            var operation = document.getElementById('operation').value;
+            var display = document.getElementById('display');
             var text;
+            var correct;
             if(operation == 'addition') {
-                if(Number(answer) == Number(first_number) + Number(last_number)) {
-                
-                    text ='Incorrect, please try again.';
-                } else {
-                    correct = false;
-                }
+                correct = Number(answer) == Number(first_number) + Number(last_number);
             }
-
+            if(operation == 'subtraction') {
+                correct = Number(answer) == Number(first_number) - Number(last_number);
+            }
+            if(operation == 'multiplication') {
+                correct = Number(answer) == Number(first_number) * Number(last_number);
+            }
+            display.innerHTML = correct ? 'Correct!' : 'Incorrect, please try again.';
         }
     </script>
 </head>
 <body>
     <div>
-        <input id="first_number" type="text" />
-        <select>
+        <input id="first_number" type="number" />
+        <select id="operation">
             <option value="addition">+</option>
             <option value="subtraction">-</option>
             <option value="multiplication">*</option>
-            <option value="division">/</option>
         </select>
-        <input id="last_number" type="text" />
+        <input id="last_number" type="number" />
         =
-        <input id="answer" type="text" />
+        <input id="answer" type="number" />
         <button onclick="check()">Check</button>
-        <span></span>
+        <span id="display"></span>
     </div>
 </body>
 </html>
