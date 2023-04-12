@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0 auto;;
+            width: 100vh;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            background: #00d4ff;
+        }
+
+        #root {
+            width: 300px;
+            height: 300px;
+            border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%  ;
+            box-shadow: inset 10px 20px 30px rgba(0, 0, 0, 0.5),
+                        10px 15px 20px rgba(0, 0, 0, 0.3),
+                        15px 15px 30px rgba(0, 0, 0, 0.1),
+                        inset -10px -20px 30px rgba(255, 255, 255, 0.6);
+            animation: animation 5s linear infinite;
+        }
+
+        #root::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50% 50% 44% 56% / 50% 43% 57% 50% ;
+            left: 46%;
+            top: 45%;
+            background: rgba(255, 255, 255, 0.6);
+        }
+        #root::before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 57% 43% 61% 39% / 32% 34% 66% 68%  ;
+            left: 47%;
+            top: 47%;
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        @keyframes animation {
+            0% {
+                border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%  ;
+            }            
+            25% {
+                border-radius: 60% 40% 39% 61% / 57% 60% 40% 43%  ;
+            }
+            50% {
+                border-radius: 44% 56% 30% 70% / 70% 67% 33% 30%  ;
+            }
+            75% {
+                border-radius: 28% 72% 40% 60% / 61% 60% 40% 39%  ;
+            }
+            100% {
+                border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%  ;
+            }
+        } 
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
