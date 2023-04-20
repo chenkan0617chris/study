@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE student [
+    <!ELEMENT student (subject)>
+    <!ATTLIST student firstName CDATA #REQUIRED>
+    <!ATTLIST student lastName CDATA #REQUIRED>
+    <!ATTLIST student studentID CDATA #REQUIRED>
+    <!ELEMENT subject (subjectCode, creaditPoint, mark, grade)>
+    <!ELEMENT subjectCode (#PCDATA)>
+    <!ELEMENT creaditPoint (#PCDATA)>
+    <!ELEMENT mark (#PCDATA)>
+    <!ELEMENT grade (#PCDATA)>
+]>
+<student firstName='SMITH' lastName='John' studentID='1231234'>
+    <subject>
+        <subjectCode>MATH101</subjectCode>
+        <creaditPoint>4</creaditPoint>
+        <mark>85</mark>
+        <grade>A</grade>
+    </subject>
+    <subject>
+        <subjectCode>ECON111</subjectCode>
+        <creaditPoint>5</creaditPoint>
+        <mark>70</mark>
+        <grade>B</grade>
+    </subject>
+    <subject>
+        <subjectCode>CS111</subjectCode>
+        <creaditPoint>5</creaditPoint>
+        <mark>80</mark>
+        <grade>A</grade>
+    </subject>
+    <subject>
+        <subjectCode>LAW121</subjectCode>
+        <creaditPoint>6</creaditPoint>
+        <mark>75</mark>
+        <grade>B</grade>
+    </subject>
+</student>
