@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- <xsd:element name="studentList">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="student" minOccurs="0" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="firstName" type="xsd:string" />
+                            <xsd:element name="lastName" type="xsd:string" />
+                            <xsd:element name="email" type="xsd:string" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element> -->
+    
+    
+    
+    <xsd:element name="current">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="city">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="coord">
+                                <xsd:complexType>
+                                    <xsd:atrribute name="lon" type="xsd:string"></xsd:atrribute>
+                                    <xsd:atrribute name="lat" type="xsd:string"></xsd:atrribute>
+                                </xsd:complexType>
+                            </xsd:element>    
+                            <xsd:element name="county" type="xsd:string"></xsd:element>    
+                            <xsd:element name="timezone" type="xsd:string"></xsd:element>    
+                            <xsd:element name="sun">
+                                <xsd:complexType>
+                                    <xsd:atrribute name="rise" type="xsd:datetime"></xsd:atrribute>
+                                    <xsd:atrribute name="set" type="xsd:datetime"></xsd:atrribute>
+                                </xsd:complexType>
+                            </xsd:element>    
+                        </xsd:sequence>
+                        <xsd:attribute name="id" type="xsd:string"></xsd:attribute>
+                        <xsd:attribute name="name" type="xsd:string"></xsd:attribute>
+                    </xsd:complexType>
+                </xsd:element>
+
+                <xsd:element name="temperature">
+                    <xsd:complexType>
+                        <xsd:atrribute name="value" type="xsd:decimal"></xsd:atrribute>
+                        <xsd:atrribute name="min" type="xsd:decimal"></xsd:atrribute>
+                        <xsd:atrribute name="max" type="xsd:decimal"></xsd:atrribute>
+                        <xsd:atrribute name="unit" type="xsd:string"></xsd:atrribute>
+                    </xsd:complexType>
+                </xsd:element>    
+                <xsd:element name="feels_like">
+                    <xsd:complexType>
+                        <xsd:atrribute name="value" type="xsd:decimal"></xsd:atrribute>
+                        <xsd:atrribute name="unit" type="xsd:string"></xsd:atrribute>
+                    </xsd:complexType>
+                </xsd:element>    
+                <xsd:element name="humidity">
+                    <xsd:complexType>
+                        <xsd:atrribute name="value" type="xsd:integer"></xsd:atrribute>
+                        <xsd:atrribute name="unit" type="xsd:string"></xsd:atrribute>
+                    </xsd:complexType>
+                </xsd:element>    
+                <xsd:element name="pressure">
+                    <xsd:complexType>
+                        <xsd:atrribute name="value" type="xsd:integer"></xsd:atrribute>
+                        <xsd:atrribute name="unit" type="xsd:string"></xsd:atrribute>
+                    </xsd:complexType>
+                </xsd:element>  
+
+                <xsd:element name="wind">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="speed">
+                                <xsd:complexType>
+                                    <xsd:atrribute name="value" type="xsd:decimal"></xsd:atrribute>
+                                    <xsd:atrribute name="unit" type="xsd:string"></xsd:atrribute>
+                                    <xsd:atrribute name="name" type="xsd:string"></xsd:atrribute>
+                                </xsd:complexType>
+                            </xsd:element>    
+                            <xsd:element name="gusts">
+                                <xsd:complexType>
+                                    <xsd:atrribute name="value" type="xsd:decimal"></xsd:atrribute>
+                                </xsd:complexType>
+                            </xsd:element>    
+                            <xsd:element name="direction">
+                                <xsd:complexType>
+                                    <xsd:atrribute name="value" type="xsd:integer"></xsd:atrribute>
+                                    <xsd:atrribute name="code" type="xsd:string"></xsd:atrribute>
+                                    <xsd:atrribute name="name" type="xsd:string"></xsd:atrribute>
+                                </xsd:complexType>
+                            </xsd:element>    
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>  
+
+                <xsd:element name="clouds"></xsd:element>    
+                <xsd:element name="visibility"></xsd:element>    
+                <xsd:element name="humidity"></xsd:element>    
+                <xsd:element name="pressure"></xsd:element>  
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
