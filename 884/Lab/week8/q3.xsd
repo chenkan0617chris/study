@@ -1,0 +1,29 @@
+<?xml version='1.0'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:element name='audit'>
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element name="subject" minOccurs='0' maxOccurs='unbounded'>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="code" type="xsd:string"></xsd:element>
+                        <xsd:element name="title" type="xsd:string"></xsd:element>
+                        <xsd:element name="statistics">
+                            <xsd:complexType>
+                                <xsd:sequence>
+                                    <xsd:element name="enrol" type='xsd:string'></xsd:element>
+                                    <xsd:element name="withdrawn" type='xsd:string'></xsd:element>
+                                </xsd:sequence>
+                            </xsd:complexType>
+                        </xsd:element>
+                    </xsd:sequence>
+                    <xsd:attribute name="sid" type="xsd:string"></xsd:attribute>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute name="campus" type="xsd:string"></xsd:attribute>
+        <xsd:attribute name="year" type="xsd:integer"></xsd:attribute>
+        <xsd:attribute name="session" type="xsd:string"></xsd:attribute>
+    </xsd:complexType>
+</xsd:element>
+</xsd:schema>

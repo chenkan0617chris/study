@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .info {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <script>
+        function submit() {
+            var studentNumber = document.querySelector('.studentNumber');
+            var studentName = document.querySelector('.studentName');
+            var infoDiv = document.querySelector('.info');
+
+            var number = document.querySelector('.number').value;
+            var name = document.querySelector('.name').value;
+            var fontSize = document.querySelector('.fontSize').value;
+            var color = document.querySelector('.color').value;
+            var bgColor = document.querySelector('.bgColor').value;
+
+            studentName.style.color = color;
+            studentName.innerHTML = name;
+            studentNumber.style.color = color;
+            studentNumber.innerHTML = number;
+            infoDiv.style.backgroundColor = bgColor;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td>Enter student number: </td>
+                <td><input class="number" /></td>
+            </tr>
+            <tr>
+                <td>Enter student name: </td>
+                <td><input class="name" /></td>
+            </tr>
+            <tr>
+                <td>Enter font size: </td>
+                <td><input class="fontSize" /></td>
+            </tr>
+            <tr>
+                <td>Enter text color: </td>
+                <td><input class="color" /></td>
+            </tr>
+            <tr>
+                <td>Enter background color: </td>
+                <td><input class="bgColor" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button onclick="submit()">Display student info</button>
+                </td>
+            </tr>
+        </table>
+        <div class="info">
+            <span class="studentNumber"></span>
+            <span class="studentName"></span>
+        </div>
+    </div>
+</body>
+</html>

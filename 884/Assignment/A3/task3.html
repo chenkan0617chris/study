@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function decrease() {
+            var currentNum = document.querySelector('.display').innerHTML;
+            var display = document.querySelector('.display');
+            if(currentNum <= 0) {
+                clearInterval(animation);
+                animating = false;
+            } else {
+                currentNum--;
+                display.innerHTML = currentNum;
+            }
+        }
+        
+        var animation;
+        var animating = false;
+        function start() {
+            if(animating) {
+                return;
+            } else {
+                var number = document.querySelector('input').value;
+                var display = document.querySelector('.display');
+                display.innerHTML = number;
+                animation = setInterval(decrease, 1000);
+                animating = true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td>Enter the start number: </td>
+                <td><input type="number" class="input" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button class="button" onclick="start()">Start animation</button>
+                </td>
+            </tr>
+        </table>
+        <span class="display"></span>
+    </div>
+</body>
+</html>

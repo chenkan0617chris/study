@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var animation;
+        var animating = false;
+        var firstEmoji = '&#129409;';
+        var secondeEmoji = '&#127805;';
+        var thirdEmoji = '&#127817;';
+        var count = 0;
+
+        function addEmoji() {
+            count++;
+            var display = document.querySelector('.display');
+            if(count % 3 === 1) {
+                display.innerHTML += firstEmoji;
+            } else if (count % 3 === 2){
+                display.innerHTML += secondeEmoji;
+            } else {
+                display.innerHTML += thirdEmoji;
+            }
+        }  
+
+        function start() {
+            if(animating){
+                return;
+            } else {
+                var display = document.querySelector('.display');
+                display.innerHTML = firstEmoji;
+                count++;
+                animating = true;
+                animation = setInterval(addEmoji, 1000)
+            }
+        }
+
+        function end() {
+            clearInterval(animation);
+            var display = document.querySelector('.display');
+            display.innerHTML = '';
+            animating = false;
+            count = 0;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <button class="start" onclick="start()">Start animation</button>
+        <button class="end" onclick="end()">End animation</button>
+    </div>
+    <span class="display"></span>
+</body>
+</html>

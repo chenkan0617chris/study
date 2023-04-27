@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var count = 0;
+
+        function counter() {
+            var display = document.querySelector('.display');
+            count++;
+            display.innerHTML = count;
+            display.style.color = count % 2 == 0 ? 'orange' : 'blue';
+        }
+
+        var interval;
+        var animating = false;
+        function start() {
+            if(animating) {
+                return
+            } else {
+                var display = document.querySelector('.display');
+                display.innerHTML = '0';
+                display.style.color = 'orange';
+
+                interval = setInterval(counter, 1000);
+                animating = true;
+            }
+        }
+        
+        function end() {
+            var display = document.querySelector('.display');
+            clearInterval(interval);
+            animating = false;
+            display.innerHTML = '';
+            count = 0;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <button class="start" onclick="start()">Start animation</button>
+        <button class="end" onclick="end()">End animation</button>
+    </div>
+    <span style="color: orange" class="display"></span>
+</body>
+</html>
