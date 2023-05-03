@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+            margin: 0;
+            padding: 30px;
+        }
+    </style>
+    <script>
+        function green() {
+            var text = document.querySelector('h1');
+            text.style.color = 'green';
+        }
+
+        function orange() {
+            var text = document.querySelector('h1');
+            text.style.color = 'orange';
+        }
+
+        function blue() {
+            var text = document.querySelector('h1');
+            text.style.color = 'blue';
+        }
+
+        function mouseOverEvent() {
+            var text = document.querySelector('h1');
+            text.style.fontSize = '4em';
+        }
+
+        function mouseLeaveEvent() {
+            var text = document.querySelector('h1');
+            text.style.fontSize = '2em';
+        }
+
+    </script>
+</head>
+<body>
+    <div>
+        <h1 onmouseover="mouseOverEvent()" onmouseleave="mouseLeaveEvent()">University of Wollongong</h1>
+        <button onclick="green()">Green</button>
+        <button onclick="orange()">Orange</button>
+        <button onclick="blue()">Blue</button>
+    </div>
+</body>
+</html>
