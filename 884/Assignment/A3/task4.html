@@ -27,14 +27,13 @@
 
         function start() {
             if(animating){
-                return;
-            } else {
-                var display = document.querySelector('.display');
-                display.innerHTML = firstEmoji;
-                count++;
-                animating = true;
-                animation = setInterval(addEmoji, 1000)
+                end();
             }
+            var display = document.querySelector('.display');
+            display.innerHTML = firstEmoji;
+            count++;
+            animating = true;
+            animation = setInterval(addEmoji, 1000)
         }
 
         function end() {

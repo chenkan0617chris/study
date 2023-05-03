@@ -19,15 +19,14 @@
         var animating = false;
         function start() {
             if(animating) {
-                return
-            } else {
-                var display = document.querySelector('.display');
-                display.innerHTML = '0';
-                display.style.color = 'orange';
+                end();
+            } 
+            var display = document.querySelector('.display');
+            display.innerHTML = '0';
+            display.style.color = 'orange';
 
-                interval = setInterval(counter, 1000);
-                animating = true;
-            }
+            interval = setInterval(counter, 1000);
+            animating = true;
         }
         
         function end() {

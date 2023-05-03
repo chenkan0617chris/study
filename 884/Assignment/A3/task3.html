@@ -22,15 +22,25 @@
         var animation;
         var animating = false;
         function start() {
-            if(animating) {
-                return;
+            var number = document.querySelector('input').value;
+            if(number < 1) {
+                return
             } else {
-                var number = document.querySelector('input').value;
+                if(animating) {
+                    end();
+                } 
                 var display = document.querySelector('.display');
                 display.innerHTML = number;
                 animation = setInterval(decrease, 1000);
                 animating = true;
             }
+        }
+
+        function end() {
+            animating = false;
+            clearInterval(animation);
+            var display = document.querySelector('.display');
+            display.innerHTML = '';
         }
     </script>
 </head>
