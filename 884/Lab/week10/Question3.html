@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function viewJson() {
+            var code = document.getElementById('code');
+            var title = document.getElementById('title');
+            var credit = document.getElementById('credit');
+            var core = document.getElementById('core');
+
+            var obj = {};
+            obj['code'] = code.value;
+            obj['title'] = title.value;
+            obj['credit'] = credit.value;
+            obj['core'] = core.checked;
+
+            var display = document.getElementById('display');
+            display.value = JSON.stringify(obj, null, 4);
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Subject code: </td>
+            <td><input id="code" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Subject title: </td>
+            <td><input id="title" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Subject credit point: </td>
+            <td><input id="credit" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Core subject: </td>
+            <td><input type="checkbox" name="" id="core"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="viewJson()">View JSON</button>
+            </td>
+        </tr>
+    </table>
+    <textarea id="display" id="" cols="30" rows="10"></textarea>
+</body>
+</html>

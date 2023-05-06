@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function readJson() {
+            var display = document.getElementById('display');
+            var obj = JSON.parse(display.value);
+            var code = document.getElementById('code');
+            var title = document.getElementById('title');
+            var credit = document.getElementById('credit');
+            var core = document.getElementById('core');
+            code.value = obj['code'];
+            title.value = obj['title'];
+            credit.value = obj['credit'];
+            core.checked = obj['core'];
+        }
+    </script>
+</head>
+<body>
+    <textarea id="display" id="" cols="30" rows="10"></textarea>
+    <table>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="readJson()">View JSON</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Subject code: </td>
+            <td><input id="code" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Subject title: </td>
+            <td><input id="title" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Subject credit point: </td>
+            <td><input id="credit" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Core subject: </td>
+            <td><input type="checkbox" name="" id="core"></td>
+        </tr>
+    </table>
+</body>
+</html>

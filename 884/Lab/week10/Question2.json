@@ -1,0 +1,31 @@
+{
+    "firstName": "John",
+    "lastName": "Smith",
+    "studentId": 1231234,
+    "subject": [
+        {
+            "code": "MATH101",
+            "credit": 4,
+            "mark": 85,
+            "Grade": "A"
+        },
+        {
+            "code": "ECON111",
+            "credit": 5,
+            "mark": 70,
+            "Grade": "B"
+        },
+        {
+            "code": "CS100",
+            "credit": 5,
+            "mark": 80,
+            "Grade": "A"
+        },
+        {
+            "code": "LAW121",
+            "credit": 6,
+            "mark": 75,
+            "Grade": "B"
+        }
+    ]
+}

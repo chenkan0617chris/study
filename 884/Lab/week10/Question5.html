@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var total = 0;
+
+        function order() {
+            total++;
+
+            var title = document.getElementById('title');
+            var code = document.getElementById('code');
+            var quantity = document.getElementById('quantity');
+            
+            var str = `${code.value}: ${title.value} x ${quantity.value}`;
+
+            var ul = document.querySelector('ul');
+            var li = document.createElement('li');
+            li.innerHTML = str;
+            ul.appendChild(li);
+
+            var totalNumber = document.getElementById('totalNumber');
+            totalNumber.innerHTML = total;
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Enter book title: </td>
+            <td><input id="title" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Enter product code: </td>
+            <td><input id="code" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Enter quantity: </td>
+            <td><input id="quantity" type="text" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="order()">Add to order</button></td>
+        </tr>
+    </table>
+    <ul></ul>
+    <p>
+        Total number of books ordered: <span id="totalNumber">0</span>
+    </p>
+</body>
+</html>
