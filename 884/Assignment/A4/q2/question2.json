@@ -1,0 +1,59 @@
+{
+    "date": "2022/02/15",
+    "deviceName": "toronto",
+    "user": [
+        {
+            "username": "aw123",
+            "name": "Anna Wilson",
+            "group": "Student",
+            "login": [
+                {
+                    "time": "2022/01/30 04:50:50",
+                    "status": "success"
+                },
+                {
+                    "time": "2022/02/01 01:30:56",
+                    "status": "success"
+                },
+                {
+                    "time": "2022/02/01 02:00:10",
+                    "status": "fail"
+                }
+            ]
+        },
+        {
+            "username": "jasonm",
+            "name": "Jason Miles",
+            "group": "Staff",
+            "login": [
+                {
+                    "time": "2022/01/29 15:04:22",
+                    "status": "fail"
+                },
+                {
+                    "time": "2022/02/01 14:55:04",
+                    "status": "success"
+                }
+            ]
+        },
+        {
+            "username": "kc231",
+            "name": "Kan Chen",
+            "group": "Student",
+            "login": [
+                {
+                    "time": "2022/02/30 05:50:30",
+                    "status": "success"
+                },
+                {
+                    "time": "2022/03/01 01:36:56",
+                    "status": "success"
+                },
+                {
+                    "time": "2022/02/03 02:20:10",
+                    "status": "success"
+                }
+            ]
+        }
+    ]
+}

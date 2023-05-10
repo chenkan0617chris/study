@@ -1,0 +1,58 @@
+<?xml version='1.0' ?>
+<?xml-stylesheet type='text/xsl' href="question1.xsl" ?>
+<loginReport date="2022/02/15">
+    <deviceName>toronto</deviceName>
+    <user>
+        <userName>aw123</userName>
+        <name>Anna Wilson</name>
+        <group>Student</group>
+        <loginList>
+            <login>
+                <time>2022/01/30 04:50:50</time>
+                <status>success</status>
+            </login>
+            <login>
+                <time>2022/02/01 01:30:56</time>
+                <status>success</status>
+            </login>
+            <login>
+                <time>2022/02/01 02:00:10</time>
+                <status>fail</status>
+            </login>
+        </loginList>
+    </user>
+    <user>
+        <userName>jasonm</userName>
+        <name>Jason Miles</name>
+        <group>Staff</group>
+        <loginList>
+            <login>
+                <time>2022/01/29 15:04:22</time>
+                <status>fail</status>
+            </login>
+            <login>
+                <time>2022/02/01 14:55:04</time>
+                <status>success</status>
+            </login>
+        </loginList>
+    </user>
+    <user>
+        <userName>kc231</userName>
+        <name>Kan Chen</name>
+        <group>Student</group>
+        <loginList>
+            <login>
+                <time>2022/02/23 04:30:50</time>
+                <status>success</status>
+            </login>
+            <login>
+                <time>2022/02/25 01:34:56</time>
+                <status>success</status>
+            </login>
+            <login>
+                <time>2022/02/28 02:05:10</time>
+                <status>success</status>
+            </login>
+        </loginList>
+    </user>
+</loginReport>
