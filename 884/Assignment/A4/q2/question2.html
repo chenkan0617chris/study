@@ -21,16 +21,43 @@
                 if(myHttp.readyState == 4) {
                     if(myHttp.status == 200) {
                         handleSuccess(myHttp);
+                    } else {
+                        console.log("Error: " + myHttp.status)
                     }
                 }
             }
 
             function handleSuccess(myHttp) {
+                var response = JSON.parse(myHttp.responseText);
+                var html = `
+                    <h1>Login Report ${response.date}</h1>
+                    <b>Device name: </b>${response.deviceName}<br /><br />
+                `;
+
+                html += response.user.map((item) => {
+                    var text = `
+                        <b>Username: </b>${item.username}<br />
+                        <b>Name: </b>${item.name}<br />
+                        <b>Group: </b>${item.group}<br />
+                        <b>Login: </b><br />
+                        <ul>
+                            ${item.login.map((login) => {
+                                return `<li>${login.time}: ${login.status}</li>`;
+                            }).join("")}
+                        </ul>
+                        <br />
+                    `;
+                    return text;
+                }).join("");
+
+                var display = document.getElementById('display');
+                display.innerHTML = html;
             }
         }
     </script>
 </head>
 <body>
     <button onclick="getLoginReport()">Get Login Report</button>
+    <div id="display"></div>
 </body>
 </html>
