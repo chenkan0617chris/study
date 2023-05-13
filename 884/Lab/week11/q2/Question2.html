@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function search() {
+            var myHttpRequest = new XMLHttpRequest();
+
+            myHttpRequest.onreadystatechange = function() {
+                if(myHttpRequest.readyState == 4) {
+                    if(myHttpRequest.status == 200) {
+                        handleSuccess(myHttpRequest);
+                    } else {
+                        console.log("Error: " + myHttpRequest.status);
+                    }
+                }
+            };
+
+            myHttpRequest.open("GET", 'airport.json', true);
+
+            myHttpRequest.send();
+        }
+
+        function handleSuccess(response) {
+            var info = JSON.parse(response.responseText);
+            var display = document.getElementById("display");
+            
+            var html = `
+                <b>Search Query: </b>${info.searchQuery}<br /><br />
+                <table border="1">
+                    <tr>
+                        <th>Airport</th>
+                        <th>ICAO</th>
+                        <th>IATA</th>
+                        <th>Location</th>
+                    </tr> 
+
+            `;
+
+            var content = info.searchResult.map((item) => {
+                return `
+                    <tr>
+                        <td>${item.airportName}</td>
+                        <td>${item.ICAO}</td>
+                        <td>${item.IATA}</td>
+                        <td>${item.city}, ${item.country}</td>
+                    </tr>
+                `;
+            }).join("");
+
+            html += content;
+
+            html += `</table>`
+
+            display.innerHTML = html;
+        }
+
+    </script>
+</head>
+<body>
+    <button onclick="search()">Search Airport</button><br /><br />
+    <div id="display"></div>
+</body>
+</html>

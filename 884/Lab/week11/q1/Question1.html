@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getJson(){
+            var myHttp = new XMLHttpRequest();
+            
+            myHttp.onreadystatechange = function () {
+                if (myHttp.readyState == 4){
+                    if(myHttp.status == 200) {
+                        handleSuccess(myHttp.responseText);
+                    } else {
+                        console.log(myHttp.status);
+                    }
+
+                }
+            }
+
+            myHttp.open('GET', 'faculty.json', true);
+
+            myHttp.send();
+
+            function handleSuccess(response) {  
+                var obj = JSON.parse(response);
+
+                var display = document.getElementById('display');
+
+                var html = `
+                    <b>Name: </b>${obj.name}<br />
+                    <b>Abbreviation: </b>${obj.abbreviation}<br />
+                    <b>Email: </b>${obj.email}<br />
+                    <b>Website: </b>${obj.web}<br />
+                `;
+
+                display.innerHTML = html;
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="getJson()">Get Faculty Details</button><br /><br />
+    <div id="display"></div>
+</body>
+</html>
