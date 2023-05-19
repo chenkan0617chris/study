@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dragRoot div, #dropRoot div {
+            width: 100px;
+            height: 50px;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <canvas id="canvas" with='500' height="500" ></canvas> -->
+    <div>
+        <div id="dropRoot" style='display: flex;'>
+            <div id="drop1" ondrop="drop(event)" ondragover="dragOver(event)" ></div>
+            <div id="drop2" ondrop="drop(event)" ondragover="dragOver(event)" ></div>
+            <div id="drop3" ondrop="drop(event)" ondragover="dragOver(event)" ></div>
+            <div id="drop4" ondrop="drop(event)" ondragover="dragOver(event)" ></div>
+        </div>
+        <br />
+        <div id="dragRoot" style="display: flex; ">
+            <div class="drag" id="element1" name="element 1" draggable="true" ondragstart="drag(event)">element 1</div>
+            <div class="drag" id="element2" name="element 2" draggable="true" ondragstart="drag(event)">element 2</div>
+            <div class="drag" id="element3" name="element 3" draggable="true" ondragstart="drag(event)">element 3</div>
+            <div class="drag" id="element4" name="element 4" draggable="true" ondragstart="drag(event)">element 4</div>
+        </div>
+    </div>
+    <script>
+        // var myCanvas = document.getElementById('canvas');
+
+        // var context = myCanvas.getContext('2d');
+
+        function drag(e) {
+            var dragId = e.target.id;
+
+            e.dataTransfer.setData('dragId', dragId);
+        }
+
+        function drop(e) {
+            var dropId = e.target.id;
+
+            var dragId = e.dataTransfer.getData('dragId');
+
+            var dropElement = document.getElementById(dropId);
+
+            var dragElement = document.getElementById(dragId);
+
+            if(dropElement.innerHTML !== '') {
+                var visibleElement = document.getElementsByName(dropElement.innerHTML)[0];
+
+                visibleElement.style.visibility = 'visible';
+            }
+
+            dropElement.innerHTML = dragElement.innerHTML;
+
+            dragElement.style.visibility = 'hidden';
+        }
+
+        function dragOver(e) {
+            e.preventDefault();
+        }
+
+        // context.beginPath();
+
+        // context.moveTo(0, 0);
+        // context.lineTo(0, 350);
+        // context.lineTo(50, 400);
+        // context.lineTo(250, 400);
+        // context.lineTo(300, 350);
+        // context.lineTo(300, 0);
+        // context.lineTo(200, 0);
+        // context.lineTo(200, 280);
+        // context.lineTo(180, 300);
+        // context.lineTo(120, 300);
+        // context.lineTo(100, 280);
+        // context.lineTo(100, 0);
+        // context.lineTo(0,0);    
+
+        // context.strokeStyle = 'blue';
+        // context.lineLength = 4;
+        // context.stroke();
+
+        // context.closePath();
+
+
+
+
+    </script>
+</body>
+</html>
