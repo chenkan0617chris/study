@@ -50,7 +50,7 @@ for c in result:
 		print(f'PIN is {c}')
 		break
 	except:
-		print('')	
+		continue	
         
 # ===================== Stop your answer here ==================================
 print("=========================== END ===========================")

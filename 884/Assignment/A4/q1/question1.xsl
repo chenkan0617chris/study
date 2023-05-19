@@ -16,7 +16,7 @@
                 </h1>
                 <b><xsl:text>Device name: </xsl:text></b>
                 <xsl:value-of select='deviceName'/><br/><br/>
-                <xsl:for-each select='user'>
+                <xsl:for-each select='userList/user'>
                     <b><xsl:text>Username: </xsl:text></b>
                     <xsl:value-of select='userName'/><br/>
                     <b><xsl:text>Name: </xsl:text></b>
@@ -37,5 +37,4 @@
             </body>
         </body>
     </xsl:template>
-
 </xsl:stylesheet>
