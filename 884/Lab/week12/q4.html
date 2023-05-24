@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://library.whosville/bsearch" method="get" onsubmit="return validateForm()">
+        <h1>Whosville library book search</h1>
+        <table>
+            <tr>
+                <td>Author name: </td>
+                <td><input type="text" name='author' style="width: 220px" /></td>
+            </tr>
+            <tr>
+                <td>Publication year: </td>
+                <td><input type="text" name="year" style="width: 220px" /></td>
+            </tr>
+            <tr>
+                <td>Subject: </td>
+                <td>
+                    <input type="checkbox" name="sub" value="mth" />Mathematics
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="checkbox" name="sub" value="cs" />Computer Science
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="checkbox" name="sub" value="bio" />Biology
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="checkbox" name="sub" value="phy" />Physics
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="checkbox" name="sub" value="Chem" />Chemistry
+                </td>
+            </tr>
+        </table>
+        <p></p>
+        <div style="width: 350px; text-align: center;">
+            <button>Search</button>
+            <button onclick="clearAll(event)">Clear</button>
+        </div>
+    </form>
+    <script>
+        var randomNumber1 = Math.floor(Math.random() * 10) + 1;
+        var randomNumber2 = Math.floor(Math.random() * 10) + 1;
+
+        var display = document.querySelector('p');
+        var html = `Prove that you are not a robot: ${randomNumber1} + ${randomNumber2} = <input id='ans' type="number" style="width: 60px" /><span style="color: red; visibility: hidden;">Wrong!</span>`;
+
+        display.innerHTML = html;
+
+        function validateForm() {
+            var ans = document.getElementById('ans').value;
+            var span = document.getElementsByTagName('span')[0];
+            if(Number(ans) !== randomNumber1 + randomNumber2) {
+                span.style.visibility = 'visible';
+                return false;
+            }
+            span.style.visibility = 'hidden';
+            return true;
+        }
+
+        function clearAll(e) {
+            e.preventDefault();
+            var author = document.getElementsByName('author')[0];
+            var year = document.getElementsByName('year')[0];
+            var ans = document.getElementById('ans');
+            var sub = document.getElementsByName('sub');
+            var span = document.getElementsByTagName('span')[0];
+            span.style.visibility = 'hidden';
+            
+            author.value = '';
+            year.value = '';
+            ans.value = '';
+            sub.forEach((item) => {
+                item.checked = false;
+            })
+        }
+    </script>
+</body>
+</html>
