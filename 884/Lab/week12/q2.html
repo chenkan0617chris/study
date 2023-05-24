@@ -32,6 +32,8 @@
         <img ondragstart="drag(event)" id="dog" src="./dog.png" draggable="true"></img>
     </div>
     <script>
+        var count_cat = 0;
+        var count_dog = 0;
 
         function drag(e) {
             var dragId = e.target.id;
@@ -40,7 +42,20 @@
         } 
 
         function drop(e) {
-            
+            var dropId = e.target.id;
+
+            let dragId = e.dataTransfer.getData('dragId');
+
+            if(dragId === 'cat' && dropId === 'dropCat') {
+                count_cat++;
+                var catContent = document.getElementById('dropCat');
+                catContent.innerHTML = 'cat ' + count_cat;
+            }
+            if(dragId === 'dog' && dropId === 'dropDog') {
+                count_dog++;
+                var dogContent = document.getElementById('dropDog');
+                dogContent.innerHTML = 'dog '+ count_dog;
+            }
         }
 
         function dragover(e) {

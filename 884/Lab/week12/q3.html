@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dropDog, #dropCat {
+            font-size: 50px;
+            font-weight: 800;
+        }
+        img {
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <p>Drag an animal and drop on the corresponding text</p>
+    <div id="dropDog" ondrop="dropItem(event)" ondragover="dragover(event)">DOG</div>
+    <div id="dropCat" ondrop="dropItem(event)" ondragover="dragover(event)">CAT</div>
+    <div>
+        <img id="dragCat" src="./cat.png" ondragstart="dragItem(event)" alt="" draggable="true" />
+        <img id="dragDog" src="./dog.png" ondragstart="dragItem(event)" alt="" draggable="true" />
+    </div>
+    <script>
+        function dropItem(e) {
+            var dropId = e.target.id;
+
+            var dragId = e.dataTransfer.getData('dragId');
+
+            if(dragId === 'dragCat' && dropId === 'dropCat') {
+                var catContent = document.getElementById('dropCat');
+                catContent.innerHTML += "<img src='./cat.png' />";
+            }
+            if(dragId === 'dragDog' && dropId === 'dropDog') {
+                var dogContent = document.getElementById('dropDog');
+                dogContent.innerHTML += "<img src='./dog.png' />";
+            }
+        }
+
+        function dragItem(e) {
+            e.dataTransfer.setData('dragId', e.target.id);
+        }
+
+        function dragover(e) {
+            e.preventDefault();
+        }
+    </script>
+</body>
+</html>
