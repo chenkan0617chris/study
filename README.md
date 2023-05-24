@@ -1,2 +1,2 @@
 # study
-study groud for personality
+study playgroud
