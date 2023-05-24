@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            width: 80px;
+        }
+        
+        canvas {
+            border: 3px dashed;
+            width: 600px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Enter coordinate for 1st point: 
+            X = <input type="number" id="pointA_X"></input>
+            Y = <input type="number" id="pointA_Y"></input>
+        </p>
+        <p>Enter coordinate for 2st point: 
+            X = <input type="number" id="pointB_X"></input>
+            Y = <input type="number" id="pointB_Y"></input>
+        </p>
+        <p>Enter coordinate for 3st point: 
+            X = <input type="number" id="pointC_X"></input>
+            Y = <input type="number" id="pointC_Y"></input>
+        </p>
+    </div>
+    <canvas></canvas>
+    <br/>
+    <br/>
+    <button onclick="draw()">Draw triangle</button>
+
+    <script>
+        function draw() {
+            var pointA_X = document.getElementById("pointA_X").value;
+            var pointA_Y = document.getElementById("pointA_Y").value;
+            var pointB_X = document.getElementById("pointB_X").value;
+            var pointB_Y = document.getElementById("pointB_Y").value;
+            var pointC_X = document.getElementById("pointC_X").value;
+            var pointC_Y = document.getElementById("pointC_Y").value;
+
+            var pointA = {
+                X: Number(pointA_X),
+                Y: Number(pointA_Y)
+            }
+
+            var pointB = {
+                X: Number(pointB_X),
+                Y: Number(pointB_Y)
+            }
+
+            var pointC = {
+                X: Number(pointC_X),
+                Y: Number(pointC_Y)
+            }
+
+            var canvas = document.querySelector('canvas');
+
+            var context = canvas.getContext('2d');
+
+            // draw border
+            context.beginPath();
+
+            context.moveTo(pointA.X, pointA.Y);
+            context.lineTo(pointB.X, pointB.Y);
+            context.lineTo(pointC.X, pointC.Y);
+            context.lineTo(pointA.X, pointA.Y);
+
+            context.strokeStyle = 'purple';
+            context.lineWidth = '3';
+            context.stroke();
+
+            context.closePath();
+
+            // fill the content
+            context.fillStyle = '#e83e8c';
+            context.fill();
+
+            // draw midpoint line
+            context.strokeStyle = 'white';
+            context.lineWidth = '2';
+
+            context.beginPath();
+            context.moveTo(pointA.X, pointA.Y);
+            context.lineTo(Number(pointB.X + pointC.X) / 2, Number(pointB.Y + pointC.Y) / 2);
+
+            context.moveTo(pointB.X, pointB.Y);
+            context.lineTo(Number(pointA.X + pointC.X) / 2, Number(pointA.Y + pointC.Y) / 2);
+
+            context.moveTo(pointC.X, pointC.Y);
+            context.lineTo(Number(pointA.X + pointB.X) / 2, Number(pointA.Y + pointB.Y) / 2);
+            context.stroke();
+            context.closePath();
+
+            // fill text
+            context.font = 'italic bold 20px Arial';
+            context.fillStyle = 'black';
+            context.fillText('A', pointA.X, pointA.Y);
+            context.fillText('B', pointB.X, pointB.Y);
+            context.fillText('C', pointC.X, pointC.Y);
+
+        }
+    </script>
+</body>
+</html>
