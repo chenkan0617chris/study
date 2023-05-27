@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Enter JSON to validate:</p>
+        <textarea cols="50" rows="10"></textarea><br />
+        <button onclick="validate()">Validate JSON</button>
+        <span></span>
+    </div>
+
+    <script>
+        function validate() {
+            let input = document.querySelector('textarea');
+            let span = document.querySelector('span');
+
+            try {
+
+                let obj = JSON.parse(input.value);
+
+                span.style.color = 'green';
+
+                span.innerHTML = 'JSON is valid';
+
+            } catch (e) {
+
+                span.innerHTML = e.message;
+
+                span.style.color = 'red';
+
+            }
+        }
+    </script>
+</body>
+</html>
