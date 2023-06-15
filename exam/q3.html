@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Book an Appointment</h1>
+    <form action="http://domington.org/bookapp" method="get">
+        <table>
+            <tr>
+                <td>
+                    <b>Username: </b>
+                </td>
+                <td>
+                    <input name="user" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Appointment day:</b>
+                </td>
+                <td>
+                    <input name="app" value="mon" type="radio" />Monday
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input name="app" value="tue" type="radio" />Tuesday
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input name="app" value="wed" type="radio" />Wednesday
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input name="app" value="thu" type="radio" />Thursday
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input name="app" value="fri" type="radio" />Friday
+                </td>
+            </tr>
+            <tr>
+                <td><b>Service: </b></td>
+                <td>
+                    <select name="service">
+                        <option value="a">Academic Service</option>
+                        <option value="c">Career Service</option>
+                        <option value="h">Health Service</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" />
+        <input type="reset" />
+
+    </form>
+</body>
+</html>

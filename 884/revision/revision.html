@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getDetails() {
+            var httpRequest = new XMLHttpRequest();
+
+            httpRequest.onreadystatechange = function () {
+                if(httpRequest.readyState === 4){
+                    if(httpRequest.status === 200){
+                        handleSuccess(httpRequest);
+                    } else {
+                        console.log(httpRequest.status)
+                    }
+                }
+            }
+
+            httpRequest.open('get', 'q1.json', true);
+
+            httpRequest.send();
+        }
+
+        function handleSuccess(httpRequest) {
+            let response = JSON.parse(httpRequest.responseText);
+            console.log(response)
+        }
+    </script>
+</head>
+<body>
+    <button onclick="getDetails()">Get Faculty Details</button>
+</body>
+</html>
