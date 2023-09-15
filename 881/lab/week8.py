@@ -163,3 +163,5 @@ linkedListObj.insertFirst("emu")
 linkedListObj.insertFirst("frog")
 print(linkedListObj.getLength())
 print(linkedListObj)
+
+

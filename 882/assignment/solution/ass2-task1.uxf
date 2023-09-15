@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>370</y>
+      <w>130</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>PROJECT
+--
+title   ID1
+budget
+start_date
+bg=#dddddd
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>370</y>
+      <w>160</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>DEPARTMENT
+--
+budget
+dname   ID1
+cname   ID2  FK1
+country   ID2  FK1
+ceo    ID3    FK2
+phone   ID3   FK2
+address  ID3   FK2
+bg=#dddddd
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>820</x>
+      <y>370</y>
+      <w>200</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>COMPANY
+--
+cname   ID1
+country   ID1
+ceo    ID2
+phone   ID2
+address  ID2
+company-type
+bg=#dddddd
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>370</y>
+      <w>130</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>implements
+--
+title   ID1  FK1
+dname   ID2   FK2
+bg=#dddddd
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1070</x>
+      <y>370</y>
+      <w>160</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>system
+--
+sname   ID1
+cname   ID2  FK1
+country   ID2  FK1
+ceo    ID3    FK2
+phone   ID3   FK2
+address  ID3   FK2
+bg=#dddddd
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1270</x>
+      <y>370</y>
+      <w>160</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>medicine
+--
+mname   ID1
+cname   ID2  FK1
+country   ID2  FK1
+ceo    ID3    FK2
+phone   ID3   FK2
+address  ID3   FK2
+bg=#dddddd
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

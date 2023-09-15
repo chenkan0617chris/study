@@ -8,6 +8,7 @@ def hash_password(password):
 
 salt = os.urandom(16)
 
+
 password = hash_password(b'csit970*')
 
 

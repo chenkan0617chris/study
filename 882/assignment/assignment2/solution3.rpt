@@ -1,0 +1,63 @@
+mysql> source solution3.sql
+--------------
+/*
+(1) Add a new department (dnumber=11) record into the sample database. 
+The values of other columns for the new department are up to you. 
+Assign the new department a location from the existing department addresses in the sample database.
+*/
+insert into department values (11, 'activity', '00500', 9999999, '2023-09-08')
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+insert into deptlocation values (11, '25 Box Road, Sydney, NSW 2170')
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+/*
+(2) The Racing car project (pnumber=1003) is terminated. 
+Delete all the information related to the Racing car project from the sample database, 
+including the project information and the workson information related to the project.
+*/
+Delete from workson where pnumber = 1003
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+Delete from project where pnumber = 1003
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+--------------
+/*
+(3) The Swimming project (pnumber=1005) is being implemented by department 6 (dnumber=6). 
+To ensure the delivery of the project, an employee (enumber=00100) becomes the new manager of department 6.
+ In addition, employee (enumber=00100) becomes the supervisor of all the employees in department 6. 
+ Update the data in the sample database. 
+*/
+update project set dnumber = 6 where pnumber = 1005
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+--------------
+update employee set dnumber = 6 where enumber = '00100'
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+--------------
+update employee set supervisor = '00100' where enumber != '00100'
+--------------
+
+Query OK, 20 rows affected (0.01 sec)
+Rows matched: 25  Changed: 20  Warnings: 0
+
+mysql> notee
