@@ -1,0 +1,28 @@
+<?xml version='1.0'?>
+<?xml-stylesheet type='text/xsl' href='q5.xsl'?>
+<result>
+    <timestamp>20/06/2023</timestamp>
+    <projectsAmount>4</projectsAmount>
+    <projects>
+        <project ref='AAA123'>
+            <closingDate>27/11/2023</closingDate>
+            <format>PDF</format>
+            <diagramRequired>Yes</diagramRequired>
+        </project>
+        <project ref='XYZ123'>
+            <closingDate>01/02/2024</closingDate>
+            <format>DOC</format>
+            <diagramRequired>Yes</diagramRequired>
+        </project>
+        <project ref='DDD987'>
+            <closingDate>01/03/2024</closingDate>
+            <format>DOC</format>
+            <diagramRequired>No</diagramRequired>
+        </project>
+        <project ref='TTT111'>
+            <closingDate>10/05/2024</closingDate>
+            <format>PDF</format>
+            <diagramRequired>Yes</diagramRequired>
+        </project>
+    </projects>
+</result>
