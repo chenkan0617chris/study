@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding ="UTF-8"?>
+<owners>
+    <owner>
+        <firstName>Kan</firstName>
+        <lastName>Chen</lastName>
+        <phoneNumber>0412463243</phoneNumber>
+        <address>
+            <suburb>2500</suburb>
+            <street>Rawlinson Avenue</street>
+            <building>33</building>
+        </address>
+        <vehicles>
+            <vehicle>
+                <vehicleType>car</vehicleType>
+                <manufacturer>BYD</manufacturer>
+                <model>BYD Han</model>
+                <yearOfManufacturing>2020</yearOfManufacturing>
+                <registrationNumber>255657322342353452348</registrationNumber>
+            </vehicle>
+            <vehicle>
+                <vehicleType>truck</vehicleType>
+                <manufacturer>Toyota</manufacturer>
+                <model>Toyota aaa</model>
+                <yearOfManufacturing>2018</yearOfManufacturing>
+                <registrationNumber>675324346123456</registrationNumber>
+                <capacity>8</capacity>
+            </vehicle>
+        </vehicles>
+    </owner>
+    <owner>
+        <firstName>Chris</firstName>
+        <lastName>Smith</lastName>
+        <phoneNumber>345457232</phoneNumber>
+        <address>
+            <suburb>2550</suburb>
+            <street>Jobson Avenue</street>
+            <building>11</building>
+            <flat>2</flat>
+        </address>
+        <vehicles>
+            <vehicle>
+                <vehicleType>car</vehicleType>
+                <manufacturer>Ford</manufacturer>
+                <model>Ford Mustang</model>
+                <yearOfManufacturing>2017</yearOfManufacturing>
+                <registrationNumber>34353458234476</registrationNumber>
+            </vehicle>
+            <vehicle>
+                <vehicleType>truck</vehicleType>
+                <manufacturer>Ford</manufacturer>
+                <model>Ford F150</model>
+                <yearOfManufacturing>2022</yearOfManufacturing>
+                <registrationNumber>65782344575673</registrationNumber>
+                <capacity>12</capacity>
+            </vehicle>
+        </vehicles>
+    </owner>
+</owners>

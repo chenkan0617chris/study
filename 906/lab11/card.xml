@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<html>
+<head>
+  <title>John Doe</title>
+</head>
+<body bgcolor="ffffff">
+  <table border="3">
+    <tr><td>John Doe<br/>
+          CEO, Widget Inc.<br/>
+          <tt>john.doe@widget.com</tt><br/>
+          Phone: (202) 555-1414
+	</td>
+        <td>
+	  <img src="widget.gif"/>
+        </td>
+    </tr>
+  </table>
+</body>
+</html>

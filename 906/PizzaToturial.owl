@@ -1,0 +1,701 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#"
+     xml:base="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial">
+        <rdfs:comment>A tutorial ontology for the Pizza domain.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasBase -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasBase">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasIngredient"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#isBaseOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Pizza"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PizzaBase"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasTopping"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasIngredient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasIngredient">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#isIngredientOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasSpiciness -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasSpiciness">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PizzaTopping"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Spiciness"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasTopping -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasTopping">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasIngredient"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#isToppingOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Pizza"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PizzaTopping"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#isBaseOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#isBaseOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#isIngredientOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#isIngredientOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#isIngredientOf"/>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#isToppingOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#isToppingOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#isIngredientOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasCaloricContent -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasCaloricContent">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Pizza"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#AmericanaHotPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#AmericanaHotPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#NamedPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#JalapenoPepperTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MozzarellaTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PepperoniTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#TomatoTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A pizza that only has Mozzarella, Tomato, and Pepperoni toppings</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#AmericanaPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#AmericanaPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#NamedPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MozzarellaTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PepperoniTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#TomatoTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A pizza that only has Mozzarella, Tomato, and Pepperoni toppings</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#AnchovyTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#AnchovyTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#SeafoodTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#CaperTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#CaperTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#VegetableTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#CheeseTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#CheeseTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#CheesyPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#CheesyPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasTopping"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#CheeseTopping"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#DeepPanBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#DeepPanBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PizzaBase"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#ThinAndCrispyBase"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#GreenPepperTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#GreenPepperTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PepperTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#HamTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#HamTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MeatTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#InterestingPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#InterestingPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasTopping"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PizzaTopping"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#JalapenoPepperTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#JalapenoPepperTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PepperTopping"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasSpiciness"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MargheritaPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MargheritaPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#NamedPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MozzarellaTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#TomatoTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasTopping"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MozzarellaTopping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#TomatoTopping"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A pizza that only has Mozzarella and Tomato toppings</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MeatTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MeatTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MozzarellaTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MozzarellaTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#CheeseTopping"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#ParmesanTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MushroomTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MushroomTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#VegetableTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#NamedPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#NamedPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Pizza"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#OliveTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#OliveTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#VegetableTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#ParmesanTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#ParmesanTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#CheeseTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PepperTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PepperTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#VegetableTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PepperoniTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PepperoniTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MeatTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Pizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Pizza">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PizzaBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PizzaBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PizzaBase"/>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PizzaTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PizzaTopping"/>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PrawnTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PrawnTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#SeafoodTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#RedPepperTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#RedPepperTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PepperTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#SalamiTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#SalamiTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MeatTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#SeafoodTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#SeafoodTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#SohoPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#SohoPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#NamedPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MozzarellaTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#OliveTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#ParmesanTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasTopping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#TomatoTopping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasTopping"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MozzarellaTopping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#OliveTopping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#ParmesanTopping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#TomatoTopping"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A pizza that only has Mozzarella and Tomato toppings</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Spiciness -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Spiciness">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Hot"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Medium"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Mild"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#SpicyBeefTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#SpicyBeefTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MeatTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#SpicyPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#SpicyPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasTopping"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasSpiciness"/>
+                                <owl:hasValue rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Hot"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#ThinAndCrispyBase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#ThinAndCrispyBase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PizzaBase"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#TomatoTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#TomatoTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#VegetableTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#TunaTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#TunaTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#SeafoodTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#VegetableTopping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#VegetableTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PizzaTopping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#VegetarianPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#VegetarianPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#hasTopping"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#CheeseTopping"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#VegetableTopping"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Hot -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Hot"/>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MargheritaPizza1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MargheritaPizza1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MargheritaPizza"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Medium -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Medium"/>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Mild -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Mild">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Spiciness"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#AmericanaHotPizza"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#AmericanaPizza"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MargheritaPizza"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#SohoPizza"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#AnchovyTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PrawnTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#TunaTopping"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#CaperTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MushroomTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#OliveTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PepperTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#TomatoTopping"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#CheeseTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#MeatTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#SeafoodTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#VegetableTopping"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#GreenPepperTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#JalapenoPepperTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#RedPepperTopping"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#HamTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PepperoniTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#SalamiTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#SpicyBeefTopping"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#Pizza"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PizzaBase"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/7/PizzaToturial#PizzaTopping"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

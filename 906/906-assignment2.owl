@@ -1,0 +1,2721 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia#"
+     xml:base="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dementia="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia">
+        <rdfs:comment>An ontology for Dementia by Kan Chen, Amit Bhandari, Sharmik Basnet, Yiran Sun, Xinnan Ma, Yuxuan Chen.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HasDiagnosticTools -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HasDiagnosticTools">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HasTools"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GeneralPractitioner"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Geriatrician"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Neurologist"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Physiotherapist"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/RegisteredNurse"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HasSelectionTools -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HasSelectionTools">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HasTools"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/OccupationalTherapist"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PsychiatristOfLaterLife"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SocialWorker"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SpeechAndLanguageTherapist"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SupportOfMobilityProfessional"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SelectionOfTools"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HasTools -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HasTools">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MedicalProfessional"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Tools"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/IsMisdiagnosedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/IsMisdiagnosedWith">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Dementia"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SimilarDisease"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/IsMisdiagnosedWithDementia -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/IsMisdiagnosedWithDementia">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/IsMisdiagnosedWith"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/IsMisdiagnosedWithOtherDisease"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SimilarDisease"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Dementia"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/IsMisdiagnosedWithOtherDisease -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/IsMisdiagnosedWithOtherDisease">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/IsMisdiagnosedWith"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Dementia"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SimilarDisease"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAbilityToCoverAlternativeTreatment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAbilityToCoverAlternativeTreatment">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAbilityToCoverCosts"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HighIncomeCountry"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/LowIncomeCountry"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MiddleIncomeCountry"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaCare"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAbilityToCoverCosts -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAbilityToCoverCosts">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CountryIncomeLevel"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaCare"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAbilityToCoverMedication -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAbilityToCoverMedication">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAbilityToCoverCosts"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HighIncomeCountry"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/LowIncomeCountry"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MiddleIncomeCountry"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaCare"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAbilityToCoverNursing -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAbilityToCoverNursing">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAbilityToCoverCosts"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HighIncomeCountry"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MiddleIncomeCountry"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaCare"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAbilityToCoverTherapy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAbilityToCoverTherapy">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAbilityToCoverCosts"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HighIncomeCountry"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaCare"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAlternative -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAlternative">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Treatment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasApplicableTreatment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasApplicableTreatment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaSymptom"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Treatment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasCognitiveAssessment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasCognitiveAssessment">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HasDiagnosticTools"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GeneralPractitioner"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Geriatrician"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Neurologist"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Physiotherapist"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/RegisteredNurse"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AbbeyPainScale"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CambridgeAssessmentOfMemoryAndCognition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CognitionScreening"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaSeverityTest"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GeneralPractitionerAssessmentOfCognition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MemoryImpairmentScreen"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MiniCognitiveAssessmentInstrument"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/NeuropsychologicalTestBatteries"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/TestYourMemory"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasDiagnosisObstacles -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasDiagnosisObstacles">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaType"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosisObstacles"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasEarlyStageSymptom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasEarlyStageSymptom">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasSymptom"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Patient"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/LanguageProblems"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MemoryLoss"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MisplacingThings"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/TaskDifficulty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasEmotionalAndBehavioralAssessment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasEmotionalAndBehavioralAssessment">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HasDiagnosticTools"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GeneralPractitioner"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Geriatrician"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Neurologist"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Physiotherapist"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/RegisteredNurse"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AnxietyPerceptionTest"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BEHAVE_AD"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BehaviorTest"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DepressionInDementiaTest"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GeriatricDepressionScale"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HamiltonDepressionScale"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasFunctionalAssessment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasFunctionalAssessment">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HasDiagnosticTools"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GeneralPractitioner"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Geriatrician"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Neurologist"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Physiotherapist"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/RegisteredNurse"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/FunctionalAssessmentStagingTools"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/FunctionalTest"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasLateStageSymptom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasLateStageSymptom">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasSymptom"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Patient"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/LanguageProblems"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MemoryLoss"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasMidTermSymptom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasMidTermSymptom">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasSymptom"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Patient"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Disorientation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/LossOfInitiative"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MoodChanges"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PersonalityChanges"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasOthersAssessment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasOthersAssessment">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HasDiagnosticTools"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GeneralPractitioner"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Geriatrician"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Neurologist"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Physiotherapist"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/RegisteredNurse"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CareBurdenScale"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ClinicalDementiaRatings"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaSpecificQualityOfLifeInstrument"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaSpecificQualityOfLifeTest"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/QualityOfLifeTest"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasResponsibilityFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasResponsibilityFor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MedicalProfessional"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Treatment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasSymptom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasSymptom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Patient"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BPSD"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAge -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAge">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Patient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAverageEstimatedCost -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAverageEstimatedCost">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaType"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasCountryIncome -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasCountryIncome">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CountryIncomeLevel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasProbabilityOfBPSD -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasProbabilityOfBPSD">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BPSD"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasProbabilityOfDementia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasProbabilityOfDementia">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Patient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AbbeyPainScale -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AbbeyPainScale">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Acupuncture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Acupuncture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Adult -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Adult">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Patient"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAge"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">65</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasProbabilityOfDementia"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.01</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:label xml:lang="en">age &gt;=18, &lt; 65</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AgeingKnowledge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AgeingKnowledge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GPsFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaCare"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlzheimersOverDiagnosed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlzheimersOverDiagnosed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SimilarDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AnxietyDepressionUndiagnosed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AnxietyDepressionUndiagnosed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SimilarDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AnxietyPerceptionTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AnxietyPerceptionTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AppropriateIntervention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AppropriateIntervention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Nursing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BEHAVE_AD -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BEHAVE_AD">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BPSD -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BPSD">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaSymptom"/>
+        <rdfs:comment xml:lang="en">Behavioral and Psychological Symptoms of Dementia</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BehaviorTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BehaviorTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BehavioralScreening -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BehavioralScreening">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Nursing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BehaviourNature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BehaviourNature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PatientFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Benzodiazepine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Benzodiazepine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Medication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BlackCoffee -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BlackCoffee">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CambridgeAssessmentOfMemoryAndCognition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CambridgeAssessmentOfMemoryAndCognition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CareBurdenScale -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CareBurdenScale">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiverAge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiverAge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiversFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiverBehaviour -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiverBehaviour">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiversFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiverConcern -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiverConcern">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiversFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiverEducationStatus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiverEducationStatus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiversFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiverFamilyStatus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiverFamilyStatus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiversFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiverInsecurity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiverInsecurity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiversFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiversFactors -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiversFactors">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosisObstacles"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ChatoSan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ChatoSan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CholinesteraseInhibitors -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CholinesteraseInhibitors">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Medication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ClinicalDementiaRatings -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ClinicalDementiaRatings">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CoconutOil -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CoconutOil">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CoenzymeQ10 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CoenzymeQ10">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CognitionScreening -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CognitionScreening">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CognitivePower -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CognitivePower">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SelectionOfTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CognitiveStimulativeTherapy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CognitiveStimulativeTherapy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Therapy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Communication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Communication">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GPsFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CommunityResidence -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CommunityResidence">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PatientFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ConfidenceToAdvise -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ConfidenceToAdvise">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GPsFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CorticobasalDegeneration -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CorticobasalDegeneration">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaType"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAverageEstimatedCost"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50000</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CountryIncomeLevel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CountryIncomeLevel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Financial"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasCountryIncome"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Income per person annual in USD</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Curcumin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Curcumin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DanshenRoot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DanshenRoot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DecliningAbilitiesAwareness -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DecliningAbilitiesAwareness">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GPsFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Dementia -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Dementia">
+        <rdfs:comment xml:lang="en">Dementia is a neurological disease in which mental function is gradually reduced, usually accompanied by memory loss, weakened thinking skills, and reduced ability to take care of themselves in daily life.</rdfs:comment>
+        <rdfs:label xml:lang="greek">Anoia</rdfs:label>
+        <rdfs:label xml:lang="cn">Craziness</rdfs:label>
+        <rdfs:label xml:lang="german">Idiocy</rdfs:label>
+        <rdfs:label xml:lang="hindi">Jadabhudhita</rdfs:label>
+        <rdfs:label xml:lang="arabic">Lubkh</rdfs:label>
+        <rdfs:label xml:lang="jp">Ninshisho</rdfs:label>
+        <rdfs:label xml:lang="nepali">Pagalpan</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaCare -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaCare">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Dementia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaFactor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaFactor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaOverview"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaKnowledge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaKnowledge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GPsFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaOverview -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaOverview">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Dementia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaScreeningInstruments -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaScreeningInstruments">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaScreeningTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaScreeningTools -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaScreeningTools">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Tools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaSeverityTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaSeverityTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaSpecificQualityOfLifeInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaSpecificQualityOfLifeInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaSpecificQualityOfLifeTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaSpecificQualityOfLifeTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaSymptom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaSymptom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaOverview"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaType">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaOverview"/>
+        <rdfs:comment xml:lang="en">The cost is average estimated annuel in US dollers.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DenialOfAssessment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DenialOfAssessment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PatientFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DepressionInDementiaTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DepressionInDementiaTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DepressionTeenagersUndiagnosed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DepressionTeenagersUndiagnosed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SimilarDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Diagnosis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Diagnosis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Dementia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosisCommunication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosisCommunication">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GPsFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosisObstacles -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosisObstacles">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Diagnosis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaScreeningInstruments"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SelectionOfTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DietModification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DietModification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Therapy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DietarySupplements -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DietarySupplements">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DifficultyDiagnosingEarlyStage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DifficultyDiagnosingEarlyStage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GPsFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Disorientation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Disorientation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BPSD"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasProbabilityOfBPSD"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.7</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">Lost or confused about time, place, or identity. Struggling to recognize familiar environments or grasp current timeframes.</rdfs:comment>
+        <rdfs:label xml:lang="en">HighProbability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Donepezil -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Donepezil">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Medication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DrugInteraction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DrugInteraction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SimilarDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/EatingDisordersUnderDiagnosed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/EatingDisordersUnderDiagnosed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SimilarDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ElderSenior -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ElderSenior">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Patient"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAge"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasProbabilityOfDementia"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.4</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:label xml:lang="en">age&gt;=90</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/EnvironmentalModification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/EnvironmentalModification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Therapy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/EpidemiologyAwareness -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/EpidemiologyAwareness">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GPsFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ExternalMemoryAids -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ExternalMemoryAids">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Therapy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/FamilyStatus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/FamilyStatus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PatientFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Financial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Financial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaFactor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/FunctionalAssessmentStagingTools -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/FunctionalAssessmentStagingTools">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/FunctionalTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/FunctionalTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GPsFactors -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GPsFactors">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosisObstacles"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Galantamine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Galantamine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Medication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GeneralPractitioner -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GeneralPractitioner">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MedicalProfessional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GeneralPractitionerAssessmentOfCognition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GeneralPractitionerAssessmentOfCognition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GeriatricDepressionScale -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GeriatricDepressionScale">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Geriatrician -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Geriatrician">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MedicalProfessional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GinkgoBiloba -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GinkgoBiloba">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GreenTea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GreenTea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GuidelinesLack -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GuidelinesLack">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GPsFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HIVRelatedCognitiveImpairment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HIVRelatedCognitiveImpairment">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaType"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAverageEstimatedCost"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30000</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HamiltonDepressionScale -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HamiltonDepressionScale">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HerbalRemedies -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HerbalRemedies">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HighIncomeCountry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HighIncomeCountry">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CountryIncomeLevel"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasCountryIncome"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12735</xsd:minExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HumanPrionDisease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HumanPrionDisease">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaType"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAverageEstimatedCost"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60000</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HuntingtonsDisease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HuntingtonsDisease">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaType"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAverageEstimatedCost"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50000</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HuperzineA -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HuperzineA">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/InterventionEvaluation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/InterventionEvaluation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Nursing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/IntranasalInsulin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/IntranasalInsulin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/KnowledgeSkillsTraining -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/KnowledgeSkillsTraining">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GPsFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/LanguageBarrier -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/LanguageBarrier">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiversFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/LanguageProblems -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/LanguageProblems">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BPSD"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasProbabilityOfBPSD"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.6</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/LossOfInitiative -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/LossOfInitiative">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BPSD"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasProbabilityOfBPSD"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.55</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.75</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">Reduced motivation or drive. Becoming passive, avoiding activities or tasks they once enjoyed or executed without prompt.</rdfs:comment>
+        <rdfs:label xml:lang="en">HighProbability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/LowIncomeCountry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/LowIncomeCountry">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CountryIncomeLevel"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasCountryIncome"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1046</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MTBIMisdiagnosed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MTBIMisdiagnosed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SimilarDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ManicDepressive -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ManicDepressive">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SimilarDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Marijuana -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Marijuana">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MedicalFoods -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MedicalFoods">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MedicalProfessional -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MedicalProfessional">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/RelevantPeople"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Medication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Medication">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Treatment"/>
+        <rdfs:comment xml:lang="en">Prescribed drugs to manage symptoms, slow progression. Includes cholinesterase inhibitors, memantine. Adjusted based on patient&apos;s specific dementia type.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Memantamine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Memantamine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Medication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MemoryImpairmentScreen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MemoryImpairmentScreen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MemoryLoss -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MemoryLoss">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BPSD"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasProbabilityOfBPSD"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MemoryTrainingPrograms -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MemoryTrainingPrograms">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Therapy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MiddleIncomeCountry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MiddleIncomeCountry">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CountryIncomeLevel"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasCountryIncome"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1046</xsd:minExclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12735</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MildTBI -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MildTBI">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SimilarDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MiniCognitiveAssessmentInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MiniCognitiveAssessmentInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MisplacingThings -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MisplacingThings">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BPSD"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasProbabilityOfBPSD"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.75</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">Frequently losing items, placing in odd locations. Difficulty retracing steps to find them, often due to memory issues.</rdfs:comment>
+        <rdfs:label xml:lang="en">HighProbability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MontessoriBasedTraining -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MontessoriBasedTraining">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Therapy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MoodChanges -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MoodChanges">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BPSD"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasProbabilityOfBPSD"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.4</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.6</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MotorActivity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MotorActivity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SelectionOfTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MulberryFruit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MulberryFruit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MultipleSclerosis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MultipleSclerosis">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaType"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAverageEstimatedCost"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40000</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/NegativeViews -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/NegativeViews">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GPsFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Nemenda -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Nemenda">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Medication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Neurologist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Neurologist">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MedicalProfessional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/NeuropsychologicalTestBatteries -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/NeuropsychologicalTestBatteries">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/NiemannPickDiseaseTypeC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/NiemannPickDiseaseTypeC">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaType"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAverageEstimatedCost"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30000</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/NormalPressureHydrocephalus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/NormalPressureHydrocephalus">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaType"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAverageEstimatedCost"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10000</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Nursing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Nursing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Treatment"/>
+        <rdfs:comment xml:lang="en">Specialized care for dementia patients. Ensures safety, daily needs met. Often involves monitoring, routine establishment, and personalized attention.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/OccupationalTherapist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/OccupationalTherapist">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MedicalProfessional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Omega3FattyAcids -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Omega3FattyAcids">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/OralCalcium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/OralCalcium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ParkinsonsDisease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ParkinsonsDisease">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaType"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAverageEstimatedCost"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20000</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Patient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Patient">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/RelevantPeople"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAge"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasProbabilityOfDementia"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PatientFactors -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PatientFactors">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosisObstacles"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PatientImprovement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PatientImprovement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Nursing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PersonalAlertness -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PersonalAlertness">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PatientFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PersonalityChanges -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PersonalityChanges">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BPSD"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasProbabilityOfBPSD"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.5</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.7</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">Altered behavior or temperament, different from previous self. Might become more withdrawn, aggressive, or exhibit unfamiliar traits.</rdfs:comment>
+        <rdfs:label xml:lang="en">HighProbability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Phosphatidylserine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Phosphatidylserine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PhysicianKnowledgeLack -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PhysicianKnowledgeLack">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GPsFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Physiotherapist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Physiotherapist">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MedicalProfessional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PrimaryCareDoctorFactors -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PrimaryCareDoctorFactors">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GPsFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PrimaryCareFactors -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PrimaryCareFactors">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiversFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ProgressiveSupranuclearPalsy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ProgressiveSupranuclearPalsy">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaType"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAverageEstimatedCost"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50000</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PsychiatristOfLaterLife -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PsychiatristOfLaterLife">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MedicalProfessional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PureHippocampalSclerosis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PureHippocampalSclerosis">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaType"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAverageEstimatedCost"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40000</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/QualityOfLifeTest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/QualityOfLifeTest">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/RadixGinseng -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/RadixGinseng">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/RecallingPower -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/RecallingPower">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SelectionOfTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/RecoveringPower -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/RecoveringPower">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SelectionOfTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/RefusalOfAssessment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/RefusalOfAssessment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PatientFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/RegisteredNurse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/RegisteredNurse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MedicalProfessional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/RelevantPeople -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/RelevantPeople">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Dementia"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ReminiscencesTraining -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ReminiscencesTraining">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Therapy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ResourceConstraints -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ResourceConstraints">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GPsFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ResponsibilityExtraIssues -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ResponsibilityExtraIssues">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GPsFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Rivastigmine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Rivastigmine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Medication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SelectionOfTools -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SelectionOfTools">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaScreeningInstruments"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Senior -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Senior">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Patient"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAge"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">65</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasProbabilityOfDementia"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.06</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.1</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:label xml:lang="en">age&gt;=65, &lt; 90</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Silymarin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Silymarin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SimilarDisease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SimilarDisease">
+        <rdfs:comment xml:lang="en">A disease that can be misdiagnosed with dementia.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SimulatedPersonTherapy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SimulatedPersonTherapy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Therapy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SocialWorker -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SocialWorker">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MedicalProfessional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SpecialistAccess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SpecialistAccess">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GPsFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SpeechAndLanguageTherapist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SpeechAndLanguageTherapist">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MedicalProfessional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Sunshine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Sunshine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SupportOfMobilityProfessional -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SupportOfMobilityProfessional">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MedicalProfessional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SymptomsIdentification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SymptomsIdentification">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Nursing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/TaskDifficulty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/TaskDifficulty">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BPSD"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasProbabilityOfBPSD"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.8</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">Challenges performing daily tasks, once easy. Struggles range from managing finances to basic activities like dressing or cooking.</rdfs:comment>
+        <rdfs:label xml:lang="en">HighProbability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Teenager -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Teenager">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Patient"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAge"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasProbabilityOfDementia"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0001</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:label xml:lang="en">age&lt;18</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/TestYourMemory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/TestYourMemory">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DiagnosticTools"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Therapy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Therapy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Treatment"/>
+        <rdfs:comment xml:lang="en">Structured interventions to maintain functionality. Includes cognitive-behavioral therapies, physical activity, and occupational therapy tailored for dementia patients.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/TimeConstraint -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/TimeConstraint">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GPsFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Tools -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Tools">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Diagnosis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Tramiprostate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Tramiprostate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Treatment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Treatment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaCare"/>
+        <rdfs:comment xml:lang="en">introduce some treatments, alternative treatments, nursing, therapy and medications about dementia.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/TremorStiffnessShakiness -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/TremorStiffnessShakiness">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SimilarDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/TriggersAndRiskFactors -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/TriggersAndRiskFactors">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Nursing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/UndiagnosedStroke -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/UndiagnosedStroke">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SimilarDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/UnwillingnessFear -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/UnwillingnessFear">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PatientFactors"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ValidationTherapy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ValidationTherapy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Therapy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/VitaminB12Deficiency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/VitaminB12Deficiency">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SimilarDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/VitaminE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/VitaminE">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Medication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/WhipplesDisease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/WhipplesDisease">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaType"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/hasAverageEstimatedCost"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10000</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Xanthohumol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Xanthohumol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/YizhiTreatment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/YizhiTreatment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlternativeTreatment"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Adult1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Adult1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Adult"/>
+        <dementia:hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</dementia:hasAge>
+        <dementia:hasCountryIncome rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20000</dementia:hasCountryIncome>
+        <dementia:hasProbabilityOfDementia rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.01</dementia:hasProbabilityOfDementia>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ElderSenior1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ElderSenior1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ElderSenior"/>
+        <dementia:hasSymptom rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MemoryLoss"/>
+        <dementia:hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">95</dementia:hasAge>
+        <dementia:hasCountryIncome rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15000</dementia:hasCountryIncome>
+        <dementia:hasProbabilityOfBPSD rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9</dementia:hasProbabilityOfBPSD>
+        <dementia:hasProbabilityOfDementia rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.5</dementia:hasProbabilityOfDementia>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ElderSenior2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ElderSenior2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ElderSenior"/>
+        <dementia:hasSymptom rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/LanguageProblems"/>
+        <dementia:hasSymptom rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MoodChanges"/>
+        <dementia:hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">98</dementia:hasAge>
+        <dementia:hasAverageEstimatedCost rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60000</dementia:hasAverageEstimatedCost>
+        <dementia:hasCountryIncome rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12000</dementia:hasCountryIncome>
+        <dementia:hasProbabilityOfBPSD rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9</dementia:hasProbabilityOfBPSD>
+        <dementia:hasProbabilityOfDementia rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.8</dementia:hasProbabilityOfDementia>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GP1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GP1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GeneralPractitioner"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/LanguageProblems -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/LanguageProblems">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BPSD"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MemoryLoss -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MemoryLoss">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BPSD"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MoodChanges -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MoodChanges">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BPSD"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Senior1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Senior1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Senior"/>
+        <dementia:hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">65</dementia:hasAge>
+        <dementia:hasCountryIncome rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</dementia:hasCountryIncome>
+        <dementia:hasProbabilityOfDementia rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.1</dementia:hasProbabilityOfDementia>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/LanguageProblems">
+        <rdfs:label xml:lang="en">HighProbability</rdfs:label>
+        <rdfs:comment xml:lang="en">Communication challenges; expressing or understanding language. Struggling for words, repeating, or failing to comprehend conversations.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MemoryLoss">
+        <rdfs:label xml:lang="en">HighProbability</rdfs:label>
+        <rdfs:comment xml:lang="en">Decline in recalling events, facts, or talks. Both recent and past memories affected. Hallmark of conditions like Alzheimer&apos;s.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MoodChanges">
+        <rdfs:label xml:lang="en">MidProbability</rdfs:label>
+        <rdfs:comment xml:lang="en">Fluctuating emotions, disproportionate to situations. Includes sudden sadness, irritability, or elation without clear triggers.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AbbeyPainScale"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AnxietyPerceptionTest"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BEHAVE_AD"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BehaviorTest"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CambridgeAssessmentOfMemoryAndCognition"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CareBurdenScale"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ClinicalDementiaRatings"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CognitionScreening"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaSeverityTest"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaSpecificQualityOfLifeInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DementiaSpecificQualityOfLifeTest"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DepressionInDementiaTest"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/FunctionalAssessmentStagingTools"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/FunctionalTest"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GeneralPractitionerAssessmentOfCognition"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GeriatricDepressionScale"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HamiltonDepressionScale"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MemoryImpairmentScreen"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MiniCognitiveAssessmentInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/NeuropsychologicalTestBatteries"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/QualityOfLifeTest"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/TestYourMemory"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Acupuncture"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BlackCoffee"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ChatoSan"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CoconutOil"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CoenzymeQ10"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Curcumin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DanshenRoot"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DietarySupplements"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GinkgoBiloba"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GreenTea"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HerbalRemedies"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/HuperzineA"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/IntranasalInsulin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Marijuana"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MedicalFoods"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MulberryFruit"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Omega3FattyAcids"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/OralCalcium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Phosphatidylserine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/RadixGinseng"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Silymarin"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Sunshine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Tramiprostate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Xanthohumol"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/YizhiTreatment"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AlzheimersOverDiagnosed"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AnxietyDepressionUndiagnosed"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DepressionTeenagersUndiagnosed"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/DrugInteraction"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/EatingDisordersUnderDiagnosed"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MTBIMisdiagnosed"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/ManicDepressive"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MildTBI"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/TremorStiffnessShakiness"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/UndiagnosedStroke"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/VitaminB12Deficiency"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/AppropriateIntervention"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/BehavioralScreening"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/InterventionEvaluation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PatientImprovement"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/SymptomsIdentification"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/TriggersAndRiskFactors"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Benzodiazepine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CholinesteraseInhibitors"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Donepezil"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Galantamine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Memantamine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Nemenda"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/Rivastigmine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/VitaminE"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiverAge"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiverBehaviour"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiverConcern"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiverEducationStatus"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiverFamilyStatus"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiverInsecurity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/LanguageBarrier"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PrimaryCareFactors"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CaregiversFactors"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/GPsFactors"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/PatientFactors"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/CognitivePower"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/MotorActivity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/RecallingPower"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/chenkan/ontologies/2023/8/dementia/RecoveringPower"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
