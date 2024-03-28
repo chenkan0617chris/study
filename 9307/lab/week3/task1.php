@@ -9,21 +9,18 @@
 <body>
     <?php
         function reverseNumber(int $num = 0): int {
-            $newNum = strrev($num);
-            $newString = "$newNum";
-            $ans = '';
             $isPositive = $num >= 0;
-            for($i = 0; $i < ($isPositive ? strlen($newString) : (strlen($newString) - 1)); $i++) {
-                $ans .= $newString[$i] * 5;
-            }
-            $ans = (int) $ans;
-            return $isPositive ? $ans : $ans * -1;
+
+            $newNum = (int) strrev($isPositive ? $num : $num * -1);
+
+            return $isPositive ? $newNum * 5 : $newNum * -5;
+
         }
 
         echo reverseNumber(-123) . "<br/>";
-        echo reverseNumber(4533) . "<br/>";
+        echo reverseNumber(90) . "<br/>";
         echo reverseNumber() . "<br/>";
-        echo reverseNumber(213456592) . "<br/>";
+        echo reverseNumber(200) . "<br/>";
         echo reverseNumber(-5) . "<br/>";
     ?>
 </body>
