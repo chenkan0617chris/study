@@ -18,16 +18,29 @@
 
             $fp = fopen($name . '.txt', 'w');
 
-            fwrite($fp, $name . '\n');
-            fwrite($fp, $description . '\n');
-            fwrite($fp, $price . '\n');
+            fwrite($fp, 'Name:' . $name . '<br/>');
+            fwrite($fp, 'description:' . $description . '<br/>');
+            fwrite($fp, 'price:' . $price . '<br/>');
 
             fclose($fp);
             
         }
+
         $arr = scandir('./');
         foreach ($arr as $key => $value) {
-            echo $value;
+            if($value !== '.' && $value !== '..') {
+                if(str_contains($value, '.txt')) {
+                    $content = file_get_contents($value);
+
+                    echo '<pre>';
+                    echo $content . '<br/>';
+                    echo '</pre>';
+
+
+
+                   
+                }
+            }
         }
 
 
