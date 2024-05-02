@@ -27,9 +27,9 @@
     
         if(isset($_POST['submit'])) {
             $quiz = $_POST['quiz'];
-            echo '<pre>';
-            print_r($quiz);
-            echo '</pre>';
+            // echo '<pre>';
+            // print_r($quiz);
+            // echo '</pre>';
 
             foreach($quiz as $question => $answer) {
                 if(strlen($answer) === 0) {
@@ -44,7 +44,7 @@
                 }
             }
             echo '<p>your points: <span>' . $correct_questions * 5 - $incorrect_questions * 2 . '</span></p>';
-            echo $incorrect_questions;
+            echo "You have $incorrect_questions incorrect questions";
             echo '<p><a href="task1.php">try again?</a></p>';
         } else {
             ?>
