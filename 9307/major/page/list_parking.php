@@ -18,8 +18,7 @@
 
         td, th {
             padding: 8px;
-        }-
-        *+.
+        }
 
         table, form {
             margin: 16px 0;
