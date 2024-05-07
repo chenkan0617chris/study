@@ -37,8 +37,6 @@ session_start();
             return $connection;
         }
 
-
-
         if(isset($_SESSION['id'])){
             $GLOBALS['user_id'] = $_SESSION['id'];
 
