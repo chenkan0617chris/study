@@ -2,6 +2,21 @@
 create database fitnesscenter;
 use fitnesscenter;
 
+
+-- create instructors tables
+create table instructors(
+	id int auto_increment primary key,
+    name char(30) not null,
+    facility char(20) not null
+);
+
+-- create members tables
+create table members (
+	id int auto_increment primary key,
+    username char(30) unique not null,
+    password char(50) not null,
+    name char(30) not null
+);
 -- create classes tables
 create table classes (
 	id char(5) primary key,
@@ -20,20 +35,15 @@ create table enrolment (
     foreign key (member_id) references members(id)
 );
 
--- create members tables
-create table members (
-	id int auto_increment primary key,
-    username char(30) unique not null,
-    password char(50) not null,
-    name char(30) not null
-);
 
--- create instructors tables
-create table instructors(
-	id int auto_increment primary key,
-    name char(30) not null,
-    facility char(20) not null
-);
+-- insert instructors
+insert into instructors (name, facility) values ('Tom', 'FCNorth');
+insert into instructors (name, facility) values ('Richard', 'FCSouth');
+insert into instructors (name, facility) values ('Lily', 'FCNorth');
+insert into instructors (name, facility) values ('Jack', 'FCSouth');
+
+
+
 
 -- insert class
 insert into classes values ('G1', 'Group Yoga', 'group', '3');
@@ -46,8 +56,3 @@ insert into enrolment (class_id, member_id) values ('G1', '1');
 insert into enrolment (class_id, member_id) values ('G1', '2');
 insert into enrolment (class_id, member_id) values ('G1', '1');
 
--- insert instructors
-insert into instructors (name, facility) values ('Tom', 'FCNorth');
-insert into instructors (name, facility) values ('Richard', 'FCSouth');
-insert into instructors (name, facility) values ('Lily', 'FCNorth');
-insert into instructors (name, facility) values ('Jack', 'FCSouth');
