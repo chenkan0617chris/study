@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +13,16 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            background: url('../images/smart-parking.jpeg') no-repeat;
+            background-size: cover;
+        }
+        form {
+            background: white;
+            padding: 32px;
+            border-radius: 8px;
         }
     </style>
+    
 </head>
 <body>
     <?php include 'navigator.php' ?>
@@ -62,7 +73,6 @@
     <?php include '../class/user.php' ?>
     <?php
         include 'db.php';
-
 
         try {
             if(isset($_POST['submit'])) {

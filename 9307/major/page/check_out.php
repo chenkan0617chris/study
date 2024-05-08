@@ -49,7 +49,7 @@
         function render_check_out(){
             $user_id = $_SESSION['id'];
 
-            $list_current_parkings_sql = "select P.id, P.location_id, L.location, P.start_time, P.status, L.cost 
+            $list_current_parkings_sql = "select P.id, P.location_id, L.location, P.start_time, P.status, L.cost, L.current_available
             from parkings P join locations L on P.location_id = L.id where P.status = 'check-in' and P.user_id = '$user_id';";
 
             $cur_parking_result = $GLOBALS['my_connection']->query($list_current_parkings_sql);
@@ -73,12 +73,12 @@
                         <td>$row[3]</td>
                         <td>$row[4]</td>
                         <td>$$row[5]/hour</td>
-                        <td><a href='./check_out.php?check_out=true&id=$row[0]&start_time=$row[3]&cost=$row[5]'>Check Out</a></td>
+                        <td><a href='./check_out.php?check_out=true&id=$row[0]&start_time=$row[3]&cost=$row[5]&current_available=$row[6]&location_id=$row[1]'>Check Out</a></td>
                     </tr>";
                 }
                 echo '</table>';
             } else {
-                echo 'You do not have current parkings!';
+                echo '<h3>You do not have current parkings!</h3>';
             }
         }
 
@@ -135,12 +135,24 @@
 
                 try {
                     $GLOBALS['my_connection']->query($check_out_sql);
+
+                    $current_available = $_GET['current_available'] + 1;
+
+                    $location_id = $_GET['location_id'];
+
+                    $update_cur_ava_sql = "update locations set current_available = $current_available where id = '$location_id';";
+
+                    try {
+                        $GLOBALS['my_connection']->query($update_cur_ava_sql);
+
+                        echo 'Check out successfully! The total Price is $'.$price.'.';
+                    } catch (mysqli_sql_exception $e) {
+                        echo 'Error: ' . $e->getMessage() . '!';
+                    }
                     
-                    echo 'Check out successfully! The total Price is $'.$price.'.';
                 } catch (mysqli_sql_exception $e) {
                     echo 'Error: ' . $e->getMessage() . '!';
                 }
-
             }
         }
 
@@ -178,7 +190,7 @@
                 }
                 echo '</table>';
             } else {
-                echo 'You do not have current parkings!';
+                echo '<h3>You do not have past parkings!</h3>';
             }
         }
     ?>

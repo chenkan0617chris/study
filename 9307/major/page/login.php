@@ -25,7 +25,8 @@
     <?php
         include 'db.php';
 
-        $displayForm = true;
+        $hiddenForm = false;
+
         function render_login_form() {
             return '<form action="login.php" method="post">
             <table>
@@ -70,12 +71,15 @@
         }
 
         if(isset($_SESSION['login'])) {
-            $displayForm =false;
+            $hiddenForm = true;
         } else {
-            $displayForm = true;
+            $hiddenForm = false;
         }
 
-        if($displayForm){
+        if($hiddenForm) {
+            $user_type = $_SESSION['type'] == 'administrator' ? 'Administrator' : 'User';
+            echo $user_type.' ' . $_SESSION['login'] . ' is logged in!' . '<a href="login.php?logout=true">log out</a>';
+        } else {
             echo render_login_form();
 
             if(isset($_POST['submit'])) {
@@ -83,41 +87,38 @@
                 $password = $_POST['password'];
     
                 try {
+                    $secured_password = md5($password);
     
-                    $select_sql = "select id, username, password from users where username = '$username';";
+                    $select_sql = "select id, username, password, type from users where username = '$username' and password = '$secured_password' ;";
     
                     $result = $GLOBALS['my_connection']->query($select_sql);
     
                     if(mysqli_num_rows($result) > 0) {
-                        $secured_password = md5($password);
-    
+                        
                         while ($row = mysqli_fetch_assoc($result)) {
     
-                            if($secured_password == $row['password']){
+                            $_SESSION['login'] = $row['username'];
     
-                                $_SESSION['login'] = $row['username'];
+                            $_SESSION['id'] = $row['id'];
     
-                                $_SESSION['id'] = $row['id'];
-
-                                $displayForm =false;
-
-                                echo 'login successful!';
-                            } else {
-                                echo 'username or Password incorrect! please try again!';
-                            }
+                            $_SESSION['type'] = $row['type'];
+    
+                            $hiddenForm = true;
+    
+                            echo 'login successful!';
                         }
     
                     } else {
-                        echo 'invalid username! please try again!';
+                        echo 'username or Password incorrect! please try again!';
                     }
     
                 } catch (mysqli_sql_exception $e) {
                     echo 'Error: ' . $e->getMessage() . '!';
                 }
             }
-        } else {
-            echo 'User ' . $_SESSION['login'] . ' is logged in!' . '<a href="login.php?logout=true">log out</a>';
         }
+
+        
     ?>
 </body>
 </html>

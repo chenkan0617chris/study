@@ -83,31 +83,37 @@
 
         
         if(isset($_SESSION['login'])){
-            echo render_create_location_form();
+            if(isset($_SESSION['type']) && $_SESSION['type'] == 'administrator') {
+                echo render_create_location_form();
+
+                if(isset($_POST['submit'])){
+                    try {
+        
+                        $id = $_POST['id'];
+                        $location = $_POST['location'];
+                        $description = $_POST['description'];
+                        $capacity = $_POST['capacity'];
+                        $cost = $_POST['cost'];
+        
+                        $create_location_sql = "insert into locations values('$id', '$location', '$description', '$capacity', '$capacity', '$cost');";
+        
+                        $GLOBALS['connection']->query($create_location_sql);
+                        
+                        echo "location created successfully!";
+        
+                    } catch (mysqli_sql_exception $e) {
+                        echo 'Error: ' . $e->getMessage() . '!';
+                    }
+                }
+                
+            } else {
+                echo "<h3>You are not administrator! No permission to access this page!</h3>";
+            }
         } else {
             echo "Please login first" . "<a href='login.php'>Login</a>";
         }
 
-        if(isset($_POST['submit'])){
-
-            try {
-
-                $id = $_POST['id'];
-                $location = $_POST['location'];
-                $description = $_POST['description'];
-                $capacity = $_POST['capacity'];
-                $cost = $_POST['cost'];
-
-                $create_location_sql = "insert into locations values('$id', '$location', '$description', '$capacity', '$capacity', '$cost');";
-
-                $GLOBALS['connection']->query($create_location_sql);
-                
-                echo "location created successfully!";
-
-            } catch (mysqli_sql_exception $e) {
-                echo 'Error: ' . $e->getMessage() . '!';
-            }
-        }
+        
         
     ?>
 </body>

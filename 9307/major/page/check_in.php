@@ -27,18 +27,13 @@
 <body>
     <?php include 'navigator.php' ?>
     <h1>Check-in Page</h1>
-    <table>
-        <tr>
-            <th></th>
-        </tr>
-    </table>
     <?php
         include 'db.php';
 
         function check_in_form() {
             return '<form action="check_in.php" method="post">
                 <label>Parking ID: </label>
-                <input type="text" name="parking_id" id="" />
+                <input type="text" name="parking_id" id="" required/>
                 <input type="submit" value="check in" name="checkin">
             </form>';
         }
