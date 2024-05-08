@@ -54,5 +54,5 @@ insert into classes values ('I2', 'Individual Chest Train', 'individual', '4');
 
 -- insert enrolment
 insert into enrolment (class_id, member_id) values ('G1', 1);
-insert into enrolment (class_id, member_id) values ('I2', 2);
+insert into enrolment (class_id, member_id) values ('G2', 2);
 
