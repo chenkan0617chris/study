@@ -97,7 +97,7 @@
         
                         $create_location_sql = "insert into locations values('$id', '$location', '$description', '$capacity', '$capacity', '$cost');";
         
-                        $GLOBALS['connection']->query($create_location_sql);
+                        $GLOBALS['my_connection']->query($create_location_sql);
                         
                         echo "location created successfully!";
         
