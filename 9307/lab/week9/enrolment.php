@@ -18,6 +18,13 @@ session_start();
         td, th {
             padding: 8px;
         }
+
+        .red {
+            color: red;
+        }     
+        .green {
+            color: green;
+        }   
     </style>
 </head>
 <body>
@@ -64,33 +71,35 @@ session_start();
                     
                         try {
                             $GLOBALS['my_connection']->query($enrol_sql);
+
+                            echo "<span class='green'>".$enrol_class_id . "enrolled successfully!</span>";
         
-                            echo $enrol_class_id . ' enrolled successfully!';
                         } catch (mysqli_sql_exception $e) {
                             echo 'Error: ' . $e->getMessage() . '!';
                         }
                     }
 
                     // check class members enrol limit
-                    $check_sql = "select count(E.member_id) as amount, C.class_Type from enrolment E join classes C on E.class_id = C.id where class_id = '".$enrol_class_id."' group by C.id;";
+                    $check_sql = "select count(E.member_id) as amount, C.class_Type from enrolment E join classes C on E.class_id = C.id where E.class_id = '".$enrol_class_id."' group by C.id;";
                     $check_result = $GLOBALS['my_connection']->query($check_sql);
-
                     if(mysqli_num_rows($check_result) > 0) {
                         while($row = mysqli_fetch_assoc($check_result)){ 
                             if($row['class_Type'] === 'group') {
                                 if($row['amount'] >= 6) {
-                                    echo "This group class is full!";
+                                    echo "<span class='red'>This group class is full!</span>";
                                 } else {
                                     enrol();
                                 }
                             } else {
                                 if($row['amount'] > 0) {
-                                    echo "This individual class is full!";
+                                    echo "<span class='red'>This individual class is full!</span>";
                                 } else {
                                     enrol();
                                 }
                             }
                         }
+                    } else {
+                        enrol();
                     }
                 }
     
@@ -101,8 +110,9 @@ session_start();
                     $withdraw_sql = 'delete from enrolment where class_id = "'.$withdraw_class_id.'" and member_id = '.$GLOBALS['user_id'].';';
                     try {
                         $GLOBALS['my_connection']->query($withdraw_sql);
+
+                        echo "<span class='green'>".$withdraw_class_id . "withdrawn successfully!</span>";
     
-                        echo $withdraw_class_id . ' withdrawn successfully!';
                     } catch (mysqli_sql_exception $e) {
                         echo 'Error: ' . $e->getMessage() . '!';
                     }

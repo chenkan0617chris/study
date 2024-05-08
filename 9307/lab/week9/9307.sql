@@ -2,7 +2,6 @@
 create database fitnesscenter;
 use fitnesscenter;
 
-
 -- create instructors tables
 create table instructors(
 	id int auto_increment primary key,
@@ -43,7 +42,9 @@ insert into instructors (name, facility) values ('Lily', 'FCNorth');
 insert into instructors (name, facility) values ('Jack', 'FCSouth');
 
 
-
+-- insert members
+insert into members (username, password, name) values ('test01', md5('asdasd'), 'AAA');
+insert into members (username, password, name) values ('test02', md5('asdasd'), 'BBB');
 
 -- insert class
 insert into classes values ('G1', 'Group Yoga', 'group', '3');
@@ -52,7 +53,6 @@ insert into classes values ('I1', 'Individual Leg Train', 'individual', '1');
 insert into classes values ('I2', 'Individual Chest Train', 'individual', '4');
 
 -- insert enrolment
-insert into enrolment (class_id, member_id) values ('G1', '1');
-insert into enrolment (class_id, member_id) values ('G1', '2');
-insert into enrolment (class_id, member_id) values ('G1', '1');
+insert into enrolment (class_id, member_id) values ('G1', 1);
+insert into enrolment (class_id, member_id) values ('I2', 2);
 
