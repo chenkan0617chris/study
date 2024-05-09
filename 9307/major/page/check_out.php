@@ -7,22 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Easy Parking</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        td, th {
-            padding: 8px;
-        }
-
-        table, form {
-            margin: 16px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <?php include 'navigator.php' ?>
@@ -47,10 +32,14 @@
         }
 
         function render_check_out(){
-            $user_id = $_SESSION['id'];
-
-            $list_current_parkings_sql = "select P.id, P.location_id, L.location, P.start_time, P.status, L.cost, L.current_available
-            from parkings P join locations L on P.location_id = L.id where P.status = 'check-in' and P.user_id = '$user_id';";
+            $username = $_SESSION['login'];
+            if($_SESSION['type'] === 'administrator') {
+                $list_current_parkings_sql = "select P.id, P.username, P.location_id, L.location, P.start_time, P.status, L.cost, L.current_available
+                from parkings P join locations L on P.location_id = L.id where P.status = 'check-in';";
+            } else {
+                $list_current_parkings_sql = "select P.id, P.username, P.location_id, L.location, P.start_time, P.status, L.cost, L.current_available
+                from parkings P join locations L on P.location_id = L.id where P.status = 'check-in' and P.username = '$username';";
+            }
 
             $cur_parking_result = $GLOBALS['my_connection']->query($list_current_parkings_sql);
 
@@ -58,6 +47,7 @@
                 echo '<table border=1>
                     <tr>
                         <th>ID</th>
+                        <th>Username</th>
                         <th>Location ID</th>
                         <th>Location</th>
                         <th>Start Time</th>
@@ -72,45 +62,14 @@
                         <td>$row[2]</td>
                         <td>$row[3]</td>
                         <td>$row[4]</td>
-                        <td>$$row[5]/hour</td>
-                        <td><a href='./check_out.php?check_out=true&id=$row[0]&start_time=$row[3]&cost=$row[5]&current_available=$row[6]&location_id=$row[1]'>Check Out</a></td>
+                        <td>$row[5]</td>
+                        <td>$$row[6]/hour</td>
+                        <td><a href='./check_out.php?check_out=true&id=$row[0]&start_time=$row[4]&cost=$row[6]&current_available=$row[7]&location_id=$row[2]'>Check Out</a></td>
                     </tr>";
                 }
                 echo '</table>';
             } else {
                 echo '<h3>You do not have current parkings!</h3>';
-            }
-        }
-
-        function render_table($sql) {
-            $cur_parking_result = $GLOBALS['my_connection']->query($sql);
-            $isPast = $_GET['tab'] === 'past';
-
-            if(mysqli_num_rows($cur_parking_result) > 0){
-                echo '<table border=1>
-                    <tr>
-                        <th>ID</th>
-                        <th>Location ID</th>
-                        <th>Location</th>
-                        <th>Start Time</th>
-                        <th>Status</th>
-                        <th>Cost</th>
-                        '.$isPast ? '' : '<th>Operation</th>
-                    </tr>';
-                while($row = mysqli_fetch_array($cur_parking_result)) {
-                    echo "<tr>
-                        <td>$row[0]</td>
-                        <td>$row[1]</td>
-                        <td>$row[2]</td>
-                        <td>$row[3]</td>
-                        <td>$row[4]</td>
-                        <td>$$row[5]/hour</td>
-                        ".$isPast ? '' : "<td><a href='./check_out.php?check_out=true&id=$row[0]&start_time=$row[3]&cost=$row[5]'>Check Out</a></td>
-                    </tr>";
-                }
-                echo '</table>';
-            } else {
-                echo 'You do not have '.$_GET['tab'].' parkings!';
             }
         }
 
@@ -157,10 +116,15 @@
         }
 
         function render_past_parkings() {
-            $user_id = $_SESSION['id'];
+            $username = $_SESSION['login'];
 
-            $list_past_parkings_sql = "select P.id, P.location_id, L.location, P.start_time, P.end_time, P.total_cost, P.status, L.cost 
-            from parkings P join locations L on P.location_id = L.id where P.status = 'completed' and P.user_id = '$user_id';";
+            if($_SESSION['type'] === 'administrator') {
+                $list_past_parkings_sql = "select P.id, P.username, P.location_id, L.location, P.start_time, P.end_time, P.total_cost, P.status, L.cost 
+                from parkings P join locations L on P.location_id = L.id where P.status = 'completed';";
+            } else {
+                $list_past_parkings_sql = "select P.id, P.username, P.location_id, L.location, P.start_time, P.end_time, P.total_cost, P.status, L.cost 
+                from parkings P join locations L on P.location_id = L.id where P.status = 'completed' and P.username = '$username';";
+            }
 
             $past_parking_result = $GLOBALS['my_connection']->query($list_past_parkings_sql);
 
@@ -168,6 +132,7 @@
                 echo '<table border=1>
                     <tr>
                         <th>ID</th>
+                        <th>Username</th>
                         <th>Location ID</th>
                         <th>Location</th>
                         <th>Start Time</th>
@@ -183,9 +148,10 @@
                         <td>$row[2]</td>
                         <td>$row[3]</td>
                         <td>$row[4]</td>
-                        <td>$$row[5]</td>
-                        <td>$row[6]</td>
-                        <td>$$row[7]/hour</td>
+                        <td>$row[5]</td>
+                        <td>$$row[6]</td>
+                        <td>$row[7]</td>
+                        <td>$$row[8]/hour</td>
                     </tr>";
                 }
                 echo '</table>';

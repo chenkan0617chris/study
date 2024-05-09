@@ -24,4 +24,10 @@
         </div>';
     }
 
+    // to do list
+
+    // 2. 正则验证输入
+
+    // 3. admin能够list currently full locations
+
     

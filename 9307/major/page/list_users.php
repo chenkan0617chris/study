@@ -7,22 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Easy Parking</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        td, th {
-            padding: 8px;
-        }
-
-        table, form {
-            margin: 16px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <?php include 'navigator.php' ?>
@@ -76,7 +61,7 @@
 
             $list_checked_in_users_sql = "select U.username, U.name, U.surname, U.phone, U.email, U.type, P.location_id, P.start_time, P.end_time, P.total_cost, P.status 
             
-            from users U join parkings P on U.id = P.user_id where type = 'user';";
+            from users U join parkings P on U.username= P.username where P.status = 'check-in' and type = 'user';";
 
             $result = $GLOBALS['my_connection']->query($list_checked_in_users_sql);
 

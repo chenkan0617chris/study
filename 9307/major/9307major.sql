@@ -24,13 +24,13 @@ create table locations (
 
 create table parkings (
 	id int auto_increment primary key,
-    user_id int not null,
+    username char(30) not null,
     location_id char(10) not null,
     start_time datetime not null,
     end_time datetime,
     total_cost int,
     status char(10) not null,
-    foreign key (user_id) references users(id),
+    foreign key (username) references users(username),
     foreign key (location_id) references locations(id)
 );
 

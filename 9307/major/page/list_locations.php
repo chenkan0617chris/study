@@ -8,22 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Easy Parking</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        td, th {
-            padding: 8px;
-        }
-
-        table, form {
-            margin: 16px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <?php include 'navigator.php' ?>
@@ -88,7 +73,7 @@
                     if(mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_array($result)) {
                             echo '
-                            <form method="post" action="list_locations.php?tab=all&location_id='.$location_id.'"  >
+                            <form method="post" action="list_locations.php?tab=all&edit=true&capacity='.$row[3].'&current_available='.$row[4].'&location_id='.$location_id.'"  >
                                 <table>
                                     <tr>
                                         <td>
@@ -155,7 +140,20 @@
                 $description = $_POST['description'];
                 $capacity = $_POST['capacity'];
                 $cost = $_POST['cost'];
-                $edit_sql = "update locations set location = '$location', description = '$description', capacity = $capacity, cost = $cost where id = '$id'";
+                $prev_capacity = $_GET['capacity'];
+                $prev_avail = $_GET['current_available'];
+                
+
+
+
+                if($prev_avail - ($prev_capacity - $capacity) < 0) {
+                    echo 'Error: The capacity you input is too small than current available!';
+                    return;
+                }
+
+                $current_available = $prev_avail - ($prev_capacity - $capacity);
+
+                $edit_sql = "update locations set location = '$location', description = '$description', capacity = $capacity, current_available = $current_available, cost = $cost where id = '$id'";
 
                 try {
                     $GLOBALS['my_connection'] ->query($edit_sql);

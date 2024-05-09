@@ -8,14 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Easy Parking</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <?php include 'navigator.php' ?>
@@ -24,6 +17,7 @@
     
     <?php
         include 'db.php';
+        include 'user.php';
 
         function render_create_location_form() {
             return '<form action="insert_location.php" method="post">
@@ -57,7 +51,7 @@
                         Parking spaces:
                     </td>
                     <td>
-                        <input type="text" name="capacity" id="" required>
+                        <input type="number" name="capacity" id="" required>
                     </td>
                 </tr>
                 <tr>
@@ -65,7 +59,7 @@
                         Cost per hour:
                     </td>
                     <td>
-                        <input type="text" name="cost" id="" required>
+                        <input type="number" name="cost" id="" required>
                     </td>
                 </tr>
                 <tr>

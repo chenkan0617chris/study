@@ -31,8 +31,18 @@
     }
 
     class Administrator extends People {
-       public function insert_parking_location() {
+       public function insert_location(mysqli $conn, string $parking_id, string $location, string $description, int $capacity, int $cost) {
+        try {
+
+            $create_location_sql = "insert into locations values('$parking_id', '$location', '$description', '$capacity', '$capacity', '$cost');";
+
+            $conn->query($create_location_sql);
             
+            echo "location created successfully!";
+
+        } catch (mysqli_sql_exception $e) {
+            echo 'Error: ' . $e->getMessage() . '!';
+        }
        }
     }
 

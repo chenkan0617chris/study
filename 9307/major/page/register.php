@@ -22,14 +22,15 @@
             border-radius: 8px;
         }
     </style>
-    
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <?php include 'navigator.php' ?>
-    <h1>
-        Register Page
-    </h1>
+    
     <form action="register.php" method="post">
+        <h1>
+            Register Page
+        </h1>
         <table>
             <tr>
                 <td>Username: </td>
