@@ -239,7 +239,7 @@
             }
 
         } else {
-            echo "<h3>Please login first " . "<a href='login.php'> Login</a></h3>";
+            echo "<h3>Please login first " . "<h3><a href='login.php'> Login</a></h3></h3>";
         }
 
         echo '</div>';

@@ -15,6 +15,9 @@
         select {
             width: 140px;
         }
+        h3 a {
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -88,7 +91,7 @@
             
             render_check_in();
         } else {
-            echo "Please login first" . "<a href='login.php'>Login</a>";
+            echo "<h3>Please login first" . "<h3><a href='login.php'>Login</a></h3></h3>";
         }
         echo '</div>';
     ?>

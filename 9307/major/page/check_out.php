@@ -12,6 +12,9 @@
         .subTab a {
             margin-right: 8px;
         }
+        h3 a {
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -22,13 +25,14 @@
         include 'db.php';
         include '../class/user.php';
         echo "<div class='content'>";
-        echo '<div class="subTab">
-            <a href="check_out.php?tab=current">Current parkings</a>
-            <a href="check_out.php?tab=past">Past parkings</a>
-        </div>';
+        
 
        
         if(isset($_SESSION['user'])){
+            echo '<div class="subTab">
+                <a href="check_out.php?tab=current">Current parkings</a>
+                <a href="check_out.php?tab=past">Past parkings</a>
+            </div>';
             // new a User instance
             $GLOBALS['user'] = new User(
                 $_SESSION['user']['id'],
@@ -48,7 +52,7 @@
             }
 
         } else {
-            echo "Please login first" . "<a href='login.php'>Login</a>";
+            echo "<h3>Please login first" . "<h3><a href='login.php'>Login</a></h3></h3>";
         }
         echo "</div>";
 
