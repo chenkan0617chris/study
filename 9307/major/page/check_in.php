@@ -22,6 +22,7 @@
     <h1>Check-in Page</h1>
     <?php
         include 'db.php';
+        include '../class/user.php';
 
         function check_in_form() {
             // fetch all locations from the database
@@ -38,7 +39,7 @@
                     }
                     $select_options .= '</select>';
                     
-                    $input = $_SESSION['type'] == 'administrator' ? '<label>Username: </label><input type="text" name="username" id="" required/>': '';
+                    $input = $_SESSION['user']['type'] == 'administrator' ? '<label>Username: </label><input type="text" name="username" id="" required/>': '';
                     return '<form action="check_in.php" method="post">
                         <label>Parking Location ID: </label>
                         '.$select_options
@@ -50,7 +51,7 @@
                     return;
                 }
             } catch (mysqli_sql_exception $e) {
-                echo 'Error: ' . $e->getMessage() . '!';
+                echo '<div class="snackbar red">Error: ' . $e->getMessage() . '!</div>';
             }
 
             
@@ -63,64 +64,33 @@
                 if(isset($_POST['username'])){
                     $username = $_POST['username'];
                 } else {
-                    $username = $_SESSION['login'];
+                    $username = $_SESSION['user']['username'];
                 }
-                $parking_id = $_POST['parking_id'];
 
-                date_default_timezone_set('Australia/Sydney');
-                $start_time = date('Y-m-d H:i:s');
-                $status = 'check-in';
-
-                $check_full_sql = "select current_available, cost from locations where id = '$parking_id';";
-
-                try {
-                    $check_full_result = $GLOBALS['my_connection']->query($check_full_sql);
-
-                    if(mysqli_num_rows($check_full_result) > 0) {
-                        while($row = mysqli_fetch_array($check_full_result)) {
-                            if($row['current_available'] == 0) {
-                                echo 'This parking location is full. Please choose another location!';
-                                return;
-                            } else {
-                                    $check_in_sql = "insert into parkings(username, location_id, start_time, status) values ('$username', '$parking_id', '$start_time' , '$status');";
-                                try {
-                                    $GLOBALS['my_connection']->query($check_in_sql);
-
-                                    $cur_avail = $row['current_available'] - 1;
-                                    $update_current_available_sql = "update locations set current_available = $cur_avail where id = '$parking_id';";
-
-                                    try {
-                                        $GLOBALS['my_connection']->query($update_current_available_sql);
-                                        $cost = $row['cost'];
-
-                                        echo 'Check-in successfully! The cost is $'.$cost.' per hour and start from '.$start_time;
-
-                                    } catch (mysqli_sql_exception $e) {
-                                        echo 'Error: ' . $e->getMessage() . '!';
-                                    }
-                                    
-                                } catch (mysqli_sql_exception $e) {
-                                    echo 'Error: Invalid Username!';
-                                }
-                            }
-                        }
-                    }
-                } catch (mysqli_sql_exception $e) {
-                    echo 'Error: ' . $e->getMessage() . '!';
-                }
+                // call check in function
+                $GLOBALS['user']->check_in($GLOBALS['my_connection'], $username, $_POST['parking_id']);
             }
         }
 
-
-        function render_admin_check_in() {
-
-        }
-        
-        if(isset($_SESSION['login'])){
+        echo "<div class='content'>";
+        if(isset($_SESSION['user'])){
+            // new a User instance
+            $GLOBALS['user'] = new User(
+                $_SESSION['user']['id'],
+                $_SESSION['user']['username'],
+                $_SESSION['user']['password'],
+                $_SESSION['user']['name'],
+                $_SESSION['user']['surname'],
+                $_SESSION['user']['phone'],
+                $_SESSION['user']['email'],
+                $_SESSION['user']['type'],
+            );
+            
             render_check_in();
         } else {
             echo "Please login first" . "<a href='login.php'>Login</a>";
         }
+        echo '</div>';
     ?>
 </body>
 </html>
