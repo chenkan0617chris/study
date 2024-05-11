@@ -96,25 +96,25 @@
                 $email_pattern = "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/";
 
                 if(!preg_match($username_pattern, $username)) {
-                    echo "<span class='red'>The username must between 3 to 20 alphabetical and numbers!</span>";
+                    echo "<div class='snackbar red'>The username must between 3 to 20 alphabetical and numbers!</div>";
                     return;
                 }
                 if(!preg_match($password_pattern, $_POST['password'])){
-                    echo "<span class='red'>The password must between 6 to 20 alphabetical, numbers and special characters!</span>";
+                    echo "<div class='snackbar red'>The password must between 6 to 20 alphabetical, numbers and special characters!</div>";
                     return;
                 }
 
                 if(!preg_match($name_pattern, $name) || !preg_match($name_pattern, $surname)){
-                    echo "<span class='red'>Invalid Name or Surname</span>";
+                    echo "<div class='snackbar red'>Invalid Name or Surname</div>";
                     return;
                 }
                 if(!preg_match($phone_pattern, $phone)){
-                    echo "<span class='red'>Invalid Phone number!</span>";
+                    echo "<div class='snackbar red'>Invalid Phone number!</div>";
                     return;
                 }
 
                 if(!preg_match($email_pattern, $email)){
-                    echo "<span class='red'>Invalid Email address!</span>";
+                    echo "<div class='snackbar red'>Invalid Email address!</div>";
                     return;
                 }
     
@@ -128,7 +128,7 @@
             }
 
         } catch (mysqli_sql_exception $e) {
-            echo '<span class="red">Error: ' . $e->getMessage() . '!</span>';
+            echo '<div class="snackbar red">Error: ' . $e->getMessage() . '!</div>';
         }
 
     ?>
