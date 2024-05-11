@@ -123,7 +123,7 @@
                 
                 $GLOBALS['my_connection']->query($register_sql);
     
-                echo 'Registered successfully!' . '<a href="./login.php">login</a>';
+                echo '<div class="snackbar green">Registered successfully!' . '<a href="./login.php">login</a></div>';
     
             }
 
