@@ -50,7 +50,7 @@
                     </form>';
 
                 } else {
-                    echo "<h1>There is no location exist currently! Please contact administrator to insert locations!</h1>";
+                    echo "<h3>There is no location exist currently! Please contact administrator to insert locations!</h3>";
                     return;
                 }
             } catch (mysqli_sql_exception $e) {
