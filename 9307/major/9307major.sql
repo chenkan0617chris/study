@@ -36,9 +36,10 @@ create table parkings (
 insert into users (username, password, name, surname, phone, email, type) values ('admin1', md5('asdasd'), 'admin', 'aaa', '0456345234', 'test@admin.com', 'administrator');
 insert into users (username, password, name, surname, phone, email, type) values ('user1', md5('asdasd'), 'user', 'bbb', '0456345234', 'test@user.com', 'user');
 
-insert into locations values ('P1', '30 Rowland Avenue', 'this is a parking', 20, 10);
-insert into locations values ('P2', '62 Jobson Avenue', 'this is a test description', 40, 5);
+insert into locations values ('P1', '30 Rowland Avenue', 'this is a parking', 20, 19, 10);
+insert into locations values ('P2', '62 Jobson Avenue', 'this is a test description', 40, 39, 5);
 
-insert into parkings (username, location_id, start_time) value ('user1', 'P1', '2024-05-09 20:38:50');
-insert into parkings (username, location_id, start_time) value ('user1', 'P2', '2024-05-10 00:02:47');
+insert into parkings (username, location_id, start_time, status) value ('user1', 'P1', '2024-05-09 20:38:50', 'check-in');
+insert into parkings (username, location_id, start_time, status) value ('user1', 'P2', '2024-05-10 00:02:47', 'check-in');
+
 
